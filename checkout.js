@@ -154,46 +154,56 @@ document.addEventListener("DOMContentLoaded", function() {
         } else if (!fullName.trim().match(/^[a-zA-Z ]+$/)) {
             errors.push({ id: "name", message: "Please use alphabets only." });
         }
+        if (!fullName.trim()) {
+            errors.push({ id: "name", message: "Please enter your full name." });
+        } else if (!fullName.trim().match(/^[a-zA-Z ]+$/)) {
+            errors.push({ id: "name", message: "Please use alphabets only." });
+        }
     
         if (!address.trim()) {
             errors.push({ id: "address", message: "Please enter your address." });
-        } else if (!(address.trim().length > 0 && address.length <= 60)) {
-            errors.push({ id: "address", message: "Address length should be 1 to 60 characters." });
+        } else if ((!/^.{1,60}$/.test(address.trim()) ||   // Check length between 1 to 60 characters
+                    !/\d/.test(address) ||                // Must contain at least one digit
+                    !/[a-zA-Z]/.test(address) ||          // Must contain at least one alphabet
+                    !/[^\w\s]/.test(address)   )){
+            errors.push({ id: "address", message: "contain special char,[0-9],[A-za-z]limit 60 char." });
         }
     
         if (!pincode.trim()) {
             errors.push({ id: "pincode", message: "Please enter your pincode." });
-        } else if (!pincode.trim().match(/^\d{6}$/)) {
-            errors.push({ id: "pincode", message: "Pincode should be 6 digits." });
+        } else if (!pincode.trim().match(/^\d{6}$/) || /^0{6}$/.test(pincode.trim())) {
+            errors.push({ id: "pincode", message: "Contain 6 digits and can't be all zeros." });
         }
     
         if (!city.trim()) {
             errors.push({ id: "city", message: "Please enter your city/town/district." });
-        } else if (!city.trim().match(/^[a-zA-Z ]+$/)) {
-            errors.push({ id: "city", message: "City should contain alphabets only." });
+        } else if (!city.trim().match(/^[a-zA-Z\s]{1,20}$/)) {
+            errors.push({ id: "city", message: "Contain [A-Za-z ]limit 20char." });
         }
     
         if (!landmark.trim()) {
             errors.push({ id: "landmark", message: "Please enter your landmark." });
-        } else if (!(landmark.trim().length > 0 && landmark.length <= 30)) {
-            errors.push({ id: "landmark", message: "Landmark length should be 1 to 30 characters." });
+        } else if (!landmark.trim().match(/^[a-zA-Z\s]{1,30}$/)){
+            errors.push({ id: "landmark", message: "Contain [A-Za-z ]limit 30char." });
         }
     
         if (!phone.trim()) {
             errors.push({ id: "phone", message: "Please enter your phone number." });
-        } else if (!phone.trim().match(/^\d{10}$/)) {
-            errors.push({ id: "phone", message: "Phone number should be 10 digits." });
+        } else if (!phone.trim().match(/^[1-9][0-9]{9}$/)) {
+            errors.push({ id: "phone", message: "Contain 10 digits and shouldn't start with zero.." });
         }
     
         if (!state.trim()) {
             errors.push({ id: "state", message: "State is mandatory." });
-        } else if (!state.trim().match(/^[a-zA-Z ]+$/)) {
-            errors.push({ id: "state", message: "State should contain alphabets only." });
+        } else if (!state.trim().match(/^[a-zA-Z\s]{1,20}$/)) {
+            errors.push({ id: "state", message: "Contain [A-Za-z ]limit 20char." });
         }
     
-        if (alternatePhone.trim() && !alternatePhone.trim().match(/^\d{10}$/)) {
-            errors.push({ id: "alternatePhone", message: "Alternate phone number should be 10 digits." });
+        if (alternatePhone.trim() && !alternatePhone.trim().match(/^[1-9][0-9]{9}$/)) {
+            errors.push({ id: "alternatePhone", message: "Contain 10 digits and shouldn't start with zero." });
         }
+    
+       
     
         if (selectedMethod) {
             if (selectedMethod.value === "card") {
