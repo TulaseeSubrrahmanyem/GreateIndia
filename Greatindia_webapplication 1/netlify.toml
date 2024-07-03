@@ -1,0 +1,6 @@
+[build]
+  publish = "/"
+  command = ""
+
+[build.environment]
+  NODE_ENV = "production"
