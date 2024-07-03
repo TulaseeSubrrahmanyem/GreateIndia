@@ -37,12 +37,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
             totalPrice += itemTotalPrice;
             totalQuantity += item.count;
+
             const truncatedName = item.name.length > 15 ? item.name.substring(0, 20) + '...' : item.name;
+
+            const productData = { ...item }; // Combine product data 
+            const productDataString = JSON.stringify(productData, (key, value) => {
+                // Escape single quotes in string values
+                return typeof value === 'string' ? value.replace(/'/g, "&#39;") : value;
+            });
+        
             const itemDiv = document.createElement('div');
             itemDiv.className = 'cart-item';
             itemDiv.innerHTML = `
                 <div class='item-details'>
-                    <div class="item-image">
+                    <div class="item-image" data-product='${productDataString}' onclick="viewItemDetails(this)">
                         <img src="${item.image}" alt="${item.name}" class="item-img">
                     </div>
                     <div class='item-content'>
@@ -50,6 +58,8 @@ document.addEventListener("DOMContentLoaded", function() {
                             <h3>${item.name}</h3>
                             <h4>Price: &#8377; ${item.mainprice}</h4>
                             <p class='quantity'>Quantity: <span id="quantity${index}">${item.count}</span></p>
+                         ${item.selectedSizes && item.selectedSizes.length > 0 && item.selectedSizes[0] !== '' ? `<p class='quantity'>Size: ${item.selectedSizes.join(', ')}</p>` : ''}
+
                             <p>Total: &#8377; <span id="itemTotalPrice${index}">${itemTotalPrice.toFixed(2)}</span></p>
                         </div>
                         <div class='item-controls'>
@@ -81,6 +91,22 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem('cart', JSON.stringify(cartItems));
     }
 
+    window.viewItemDetails = function(div) {
+        try {
+            const productDataString = div.getAttribute('data-product');
+            const productData = JSON.parse(productDataString);
+            const productId = productData.id;
+            const mainCategoryName = productData.mainCategoryName;
+
+            // Store the product data locally
+            localStorage.setItem('selectedProductData', JSON.stringify(productData));
+
+            // Redirect to the product detail page with query parameters
+            window.location.href = `productDetail.html?productId=${productId}&mainCategoryName=${mainCategoryName}`;
+        } catch (error) {
+            console.error('Error parsing product data:', error);
+        }
+    }
     window.deleteItem = function(index) {
         let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
         cartItems.splice(index, 1);
@@ -157,4 +183,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // }
 
     loadCartItems();
+
+    
 });

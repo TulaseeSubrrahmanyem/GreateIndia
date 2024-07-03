@@ -93,6 +93,103 @@ function addToCart(button) {
         button.disabled = false;
     }
 }
+
+
+// function addToCart(button) {
+//     try {
+//         button.disabled = true;
+
+//         if (button && button.dataset) {
+//             const productData = JSON.parse(button.dataset.product);
+//             let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+//             // Check if productData is valid and has mainCategoryName
+//             if (!productData || !productData.mainCategoryName) {
+//                 console.error("Product data or mainCategoryName is missing.");
+//                 return;
+//             }
+
+//             // Determine the selected size(s) from user input
+//             const selectedSizeInputs = Array.from(document.querySelectorAll('input[name="size"]:checked'));
+//             const selectedSizes = selectedSizeInputs.map(input => input.value);
+
+//             // If no size is selected from user input, use default selected size
+//             const selectedSize = selectedSizeInputs.length > 0 ? selectedSizes[0] : button.dataset.size;
+
+//             // Update the product data with selected size(s)
+//             productData.selectedSizes = selectedSizes.length > 0 ? selectedSizes : [selectedSize];
+
+//             // Set the subcategory name in the product data
+//             productData.subcategoryName = productData.subcategorie;
+
+//             // Convert ID to string for comparison
+//             const productId = String(productData.id);
+
+//             // Check if the product with the same ID is already in the cart
+//             const existingIndex = cartItems.findIndex(item => String(item.id) === productId);
+
+//             if (existingIndex !== -1) {
+//                 // Product with the same ID is already in the cart
+//                 const existingItem = cartItems[existingIndex];
+
+//                 // Check if the selected sizes are different from the existing item
+//                 if (!arraysEqual(existingItem.selectedSizes, productData.selectedSizes)) {
+//                     // Update the size in the existing cart item
+//                     existingItem.selectedSizes = productData.selectedSizes;
+//                     cartItems[existingIndex] = existingItem;
+//                     localStorage.setItem('cart', JSON.stringify(cartItems));
+//                     console.log("Size updated in cart for product:", productData);
+//                     alert("Size updated in cart for the product.");
+//                 } else {
+//                     console.log("Product with this ID is already in the cart:", productData);
+//                    // alert("Product with this ID is already in the cart.");
+//                 }
+
+//                 // Change button text and add event listener to go to cart
+//                 button.textContent = 'Go to Cart';
+//                 button.removeEventListener('click', addToCart); // Remove existing event listener
+//                 button.addEventListener('click', () => window.location.href = 'cart.html'); // Add new event listener
+//                 return;
+//             } else {
+//                 // Product is not in the cart, add it
+//                 if (cartItems.length >= 10) {
+//                     alert("You cannot add more than 10 items to the cart.");
+//                     console.log("Cart limit of 10 items reached.");
+//                     return;
+//                 }
+//                 cartItems.push(productData);
+//                 localStorage.setItem('cart', JSON.stringify(cartItems));
+//                 updateCartCount();
+//                 console.log("Product added to cart:", productData);
+//                 alert("Product added to cart.");
+//             }
+
+//             // Change button text and add event listener to go to cart
+//             button.textContent = 'Go to Cart';
+//             button.removeEventListener('click', addToCart); // Remove existing event listener
+//             button.addEventListener('click', () => window.location.href = 'cart.html'); // Add new event listener
+//         } else {
+//             console.error("Button is undefined or does not have dataset attribute:", button);
+//         }
+//     } catch (error) {
+//         console.error("Error adding product to cart:", error);
+//     } finally {
+//         // Re-enable the button after processing
+//         button.disabled = false;
+//     }
+// }
+
+// // Helper function to compare arrays
+// function arraysEqual(arr1, arr2) {
+//     if (arr1.length !== arr2.length) return false;
+//     for (let i = 0; i < arr1.length; i++) {
+//         if (arr1[i] !== arr2[i]) return false;
+//     }
+//     return true;
+// }
+
+
+
 function CategoryProducts(category) {
     window.location.href = 'productsList.html?category=' + encodeURIComponent(category);
  

@@ -119,7 +119,7 @@ function createProductDiv(product, mainCategoryName, subcategorie) {
 
     // Check if product is in favorites
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    const isFavorite = favorites.some(item => item.name === product.name);
+    const isFavorite = favorites.some(item => item.id === product.id);
 
     // Check if product is in cart
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -181,7 +181,7 @@ function createProductDiv(product, mainCategoryName, subcategorie) {
        
            if (isFavorite) {
                // Remove from favorites
-               favorites.splice(favorites.findIndex(item => item.name === productData.name), 1);
+               favorites.splice(favorites.findIndex(item => item.id === productData.id), 1);
                element.querySelector('i').classList.remove('fas');
                element.querySelector('i').classList.add('far');
            } else {

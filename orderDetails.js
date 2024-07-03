@@ -65,6 +65,9 @@ function displayOrderDetails() {
 
     // Display each item in the order
     order.items.forEach(item => {
+        if(!item.count){
+            item.count=1
+        }
        // console.log('Item:', item);
         const itemDiv = document.createElement('div');
         itemDiv.classList.add('order-item');
