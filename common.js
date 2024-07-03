@@ -259,7 +259,7 @@ function searchItems() {
         const mainContent = document.querySelector('.pageContainer');
         // Toggle filter options visibility
         toggleFilterBtn.addEventListener("click", function() {
-            filterOptions.classList.toggle("active");
+            filterOptions.classList.add("active");
             mainContent.classList.add('blur');
             document.body.classList.add('no-scroll');
             // toggleFilterBtn.classList.toggle("active");
