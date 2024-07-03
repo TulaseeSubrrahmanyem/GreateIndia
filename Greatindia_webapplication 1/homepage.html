@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Home Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Meta tags to prevent caching -->
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="home.css">
+    <!-- <link rel="stylesheet" href="productList.css"> -->
+   <!-- Use either local path -->
+   <link rel="stylesheet" href="path/to/font-awesome/css/all.min.css">
+<!-- Or use CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<script src="https://kit.fontawesome.com/2b9cdc1c9a.js" crossorigin="anonymous"></script>
+<!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+
+
+</head>
+<body>
+    <header>
+        <div id="nav"> 
+            <div class="logoSearch">      
+            <div class="logo">
+                <a href="homepage.html">
+                    <div class="logoContainer">
+                      <img id="bx" src="images/logofirst.png " alt="logo">
+                      <img id="bxxx" src="images/logo2.png " alt="logo">
+                   </div>
+                </a>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="search products..." id="searchInput">
+                <a href="#" id="searchIcon"><i class="fas fa-search iconSearch"></i></a>
+            </div>
+        </div>
+            <div class="navSubContainer">
+           
+            <ul class="nav-icons">
+                <li>
+                    <a href="profile.html" >
+                        <div class="iconColumn">
+                            <i class="fas fa-user iconCss"></i>
+                            <p>Profile</p>
+                        </div>
+                        
+                    </a>
+                </li>
+                <li>
+                    <a href="cart.html">
+                        <div class="cart-container">
+                            <div class="iconColumn">
+                                <i class="fas fa-shopping-cart iconCss"></i>
+                                <p>Cart</p>
+                            </div>
+                            <!-- <?xml version="1.0" ?><svg viewBox="0 0 256 256" class="iconCsssvg" xmlns="http://www.w3.org/2000/svg"><rect fill="none" height="256" width="256"/><path d="M184,184H69.8L41.9,30.6A8,8,0,0,0,34.1,24H16" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="80" cy="204" fill="none" r="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="184" cy="204" fill="none" r="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M62.5,144H188.1a15.9,15.9,0,0,0,15.7-13.1L216,64H48" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg> -->
+                            <p id="cartItemCount">0</p>
+                            
+                        </div>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="orders.html">
+                        <div class="iconColumn">
+                            <i class="fas fa-truck iconCss"></i>
+                            <p>Orders</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="wishlist.html">
+                        <div class="iconColumn">
+                            <i class="fas fa-heart iconCss"></i>
+                            <p>Wish List</p>
+                        </div>
+                      
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </div>
+         <!--Nab filter bar type-->    
+         <div class="navFilterContainer">
+            <ul class="filterNav">
+                <li class="AllFilterBtn"> 
+                    <div style="display: flex;flex-direction: row;align-items: center;">
+                    <button id="toggleFilterBtn">
+                    <ul id="hum">
+                      <li class="hamburger"></li>
+                     <li class="hamburger1"></li>
+                     <li class="hamburger2"></li>
+                    </ul>
+                </button>
+                <p class="filter-text" style="font-size: 18px;margin-left: 5px;">All</p>
+            </div>
+            </li>
+            <li onclick="CategoryProducts('AC')" data-category="AC" class="filter-text">
+                AC                
+             </li>
+             <li onclick="CategoryProducts('fridzes')" data-category="fridzes" class="filter-text">
+                Refrigerator            
+             </li>
+             <li onclick="CategoryProducts('Sofa')" data-category="Sofa" class="filter-text">
+                Sofa              
+             </li>
+             <li onclick="CategoryProducts('Tables')" data-category="Tables" class="filter-text">
+                Tables               
+             </li>
+             <li onclick="CategoryProducts('Computers')" data-category="Computers" class="filter-text">
+                Computers               
+             </li>
+             <li onclick="CategoryProducts('MobilePhones')" data-category="MobilePhones" class="filter-text">
+                Mobiles              
+             </li>
+             <li onclick="CategoryProducts('BoysFootwear')" data-category="BoysFootwear" class="filter-text">
+                BoysFootwear            
+             </li>
+             <li onclick="CategoryProducts('Televisions')" data-category="Televisions" class="filter-text">
+                Televisions           
+             </li>
+             <li onclick="CategoryProducts('SmartWatches')" data-category="SmartWatches" class="filter-text">
+                SmartWatches
+             </li>
+             <li onclick="CategoryProducts('Cookware')" data-category="Cookware" class="filter-text">
+                Cookware            
+             </li>
+             <li onclick="CategoryProducts('DinnerSets')" data-category="DinnerSets" class="filter-text">
+                DinnerSets          
+             </li>
+             <li onclick="CategoryProducts('MenFootwear')" data-category="MenFootwear" class="filter-text">
+                MenFootwear
+             </li>
+             
+            </ul>
+        </div>
+    </header>
+     <!--Filer container side bar-->
+     <div class="filterOptions" style="margin-top: -30px;">
+        <div style="display: flex;flex-direction: row;justify-content:space-between;">
+             <!-- <h2>Search by Brand</h2>  -->
+             <div class="filterOptionSearch">
+                <input type="text" placeholder="filter by brand...." id="filterSearchInput">
+                <a href="#" id="filterSearchIcon"> <i class="fas fa-search iconSearch"></i> </a>
+            </div>  
+            <button id="closeFilterBtn"><i class="fas fa-times"></i></button>
+         </div>       
+          <div id="zeptogap">
+                <!-- <h1>Category</h1> -->
+                <ul id="categoryList">
+                    <li onclick="filterCategoryProducts('grocergrocery')" data-category="grocergrocery">
+                        <div class="zepto"><img class="zeptoimg" src="https://opensecret.in/cdn/shop/files/Copyof0I6A5830_a0cde61d-5609-43c9-9805-ef9b27dc5199.jpg?v=1682679369&width=990"/>
+                            <p>GROCERIES</p>
+                        </div>
+                     </li>
+                     <li onclick="filterCategoryProducts('fashion')" data-category="fashion">
+                        <div class="zepto"> 
+                            <img class="zeptoimg" src="https://static.vecteezy.com/system/resources/previews/002/295/740/non_2x/beautiful-girl-in-stylish-clothes-fashion-and-style-clothing-and-accessories-vector.jpg" />
+                            <p>FASHION</p>
+                        </div>
+                    </li>
+                    <li onclick="filterCategoryProducts('techgadgets')" data-category="techgadgets">
+                        <div class="zepto"><img class="zeptoimg" src="https://t4.ftcdn.net/jpg/03/64/41/07/360_F_364410756_Ev3WoDfNyxO9c9n4tYIsU5YBQWAP3UF8.jpg" />
+                            <p>ELECTRONICS</p>
+                        </div>
+                    </li>
+                    <li onclick="filterCategoryProducts('HomeFurniture')" data-category="HomeFurniture">
+                        <div class="zepto"><img class="zeptoimg" src="https://www.woodenstreet.com/mobile/images-m/furniture-package/classic-package.jpg?v=4" /> 
+                            <p>HOME FURNITURE</p>
+                        </div>
+                    </li>
+                    <li onclick="filterCategoryProducts('homeappliances')" data-category="homeappliances">
+                     <div class="zepto"><img class="zeptoimg" src="https://images.herzindagi.info/image/2020/Apr/Electronics.jpg" /> 
+                            <p>HOME-APPLIANCES</p> 
+                        </div>
+                    </li>
+                     <!-- <div class="zepto"><img class="zeptoimg" src="https://media.istockphoto.com/id/1356594824/photo/playful-little-girl-in-trendy-casual-wear.jpg?s=612x612&w=0&k=20&c=_wMy-M5ysxG_tUxDGLGnFGu15ixuqPdELPgHLmcdESc=" /> <li onclick="filterCategoryProducts('children')" data-category="children">KIDS</li></div> -->
+                     <li onclick="filterCategoryProducts('footwear')" data-category="footwear">
+                       <div class="zepto"><img class="zeptoimg" src="https://m.media-amazon.com/images/I/51-2tM1l6rL._SX695_.jpg" />
+                        <p>Footwear</p>
+                        </div>
+                    </li>
+                    <li onclick="filterCategoryProducts('Cosmetics')" data-category="Cosmetics">
+                     <div class="zepto"><img class="zeptoimg" src="https://images-static.nykaa.com/media/catalog/product/4/c/4c337686902395718338_1.jpg?tr=w-344,h-344,cm-pad_resize" /> 
+                        <p>Cosmetics</p>
+                    </div>
+                </li>
+                </ul>
+         </div>
+            
+           <div class="ratingBasedFilter">
+                <h1>Rating</h1>
+                <ul>
+                    <div class="zepto">  <li class="rating5"></li></div>
+                    <div class="zepto">  <li class="rating4"></li></div>
+                    <div class="zepto"> <li class="rating3"></li></div>
+                    <div class="zepto"> <li class="rating2"></li></div>
+                    <div class="zepto"> <li class="rating1"></li></div>
+                </ul>
+            </div>
+            <button id="clearFilterBtn">Clear Filter</button>
+    </div>
+ <div class="pageContainer">
+    <div class="hompageContainer">        
+    <div id="cat">
+        <!-- content (flex items) -->
+        <div id="radius" >GROCERYS<br><img class="c" onclick="CategoryProducts('grocergrocery')" src="images/gro.webp"></div>
+        <div id="radius">FASHION<br><img class="c" onclick="CategoryProducts('fashion')" src="images/fash.jpeg"></div>
+        <div id="radius">ELECTRONICS<br><img class="c" onclick="CategoryProducts('techgadgets')" src="images/elc.jpeg"></div>
+        <div id="radius">HOME FURNITURE<br> <img class="c" onclick="CategoryProducts('HomeFurniture') " src="images/fur.jpg"></div>
+        <div id="radius" >HOME-APPLIANCES<br><img class="c" onclick="CategoryProducts('homeappliances')" src="https://st2.depositphotos.com/1001877/5813/i/450/depositphotos_58139017-stock-photo-home-appliances-set-of-household.jpg"></div>
+        <div id="radius">Cosmetics<br><img class="c" onclick="CategoryProducts('Cosmetics')" src="https://images-static.nykaa.com/media/catalog/product/4/c/4c337686902395718338_1.jpg?tr=w-344,h-344,cm-pad_resize"></div>
+     </div>
+     <!--carousel-->
+     <div id="carousel" class="carousel">
+
+       
+
+        <div class="carousel-slide ">
+
+            <img src="https://static.vecteezy.com/system/resources/previews/002/006/774/non_2x/paper-art-shopping-online-on-smartphone-and-new-buy-sale-promotion-backgroud-for-banner-market-ecommerce-free-vector.jpg" alt="Image ">
+
+        </div>
+
+        <div class="carousel-slide ">
+
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/83d70974403181.5c2e97fb1f91b.jpg" alt="Image ">
+
+        </div>
+
+        <div class="carousel-slide ">
+
+            <img src="https://media-uk-india-banners.landmarkshops.in/Home-Centre/HC-Desktop-4-Offer-060917.jpg" alt="Image 3">
+
+        </div>
+
+        <div class="carousel-slide active">
+
+            <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Wireless/ElectronicsStore/GW/New/1242x450.jpg" alt="Image ">
+
+        </div>
+
+        <div class="carousel-slide ">
+
+            <img src="https://media.centrepointstores.com/i/centrepoint/SP_Offers_Block08MAR18.jpg" alt="Image 4">
+
+        </div>
+
+        <div class="carousel-slide">
+
+            <img src="https://media.centrepointstores.com/i/centrepoint/SP_Offers_Block04MAR18.jpg" alt="Image 7">
+
+        </div>
+
+        <div class="carousel-slide">
+
+            <img src="https://miro.medium.com/v2/resize:fit:1400/1*WBQsWvswZ4LMlvhapODmpw.jpeg" alt="Image 8">
+
+        </div>
+
+        </div>
+        <button class="arrow prev" onclick="plusSlides(-1)">&lt;</button>
+        <button class="arrow next" onclick="plusSlides(1)">&gt;</button>
+    </div>   
+   
+    <div id="noo">
+        <div class="itemsContainer1">
+            <h1 >Fashion</h1>
+            <div class="itemsContainer2">
+                <div class="itemsContainer3">
+                    <div >
+                    <button class="catgorieImg" onclick="loadCategoryProducts('Men')">             
+                    
+                        <img src="https://m.media-amazon.com/images/I/816c-inCaSL._SX569_.jpg" class="catgorieImgs" alt="Mens category"/>
+                    </button>
+                    <p>Men</p>
+                </div>
+                    <div>
+                    <button class="catgorieImg" onclick="loadCategoryProducts('women')">
+                    
+                        <img src="https://m.media-amazon.com/images/I/71cBmWiclZL._SY741_.jpg" alt="women category" class="catgorieImgs"/>
+                    </button>
+                    <p>Women</p>
+                </div>
+                </div>
+                <div class="itemsContainer3">
+                    <div>
+                    <button class="catgorieImg" onclick="loadCategoryProducts('Boys')">
+                    
+                        <img src="https://m.media-amazon.com/images/I/61z3sMQzQnL._SX679_.jpg" alt="boys category" class="catgorieImgs"/>
+                    </button>
+                    <p>Boys</p>
+                </div>
+                <div>
+                    <button class="catgorieImg" onclick="loadCategoryProducts('Girls')">
+                    
+                        <img src="https://m.media-amazon.com/images/I/41Swy6jBcRL._AC._SR360,460.jpg" alt="grils category" class="catgorieImgs"/>
+                    </button>
+                    <p>Girls</p>
+                </div>
+                </div>
+            </div>
+        </div>   
+        <div class="itemsContainer1">
+            <h1 >Footwear</h1>
+            <div class="itemsContainer2">
+                <div class="itemsContainer3">
+                    <div >
+                    <button class="catgorieImg" onclick="loadCategoryProducts('WomenFootwear')">             
+                    
+                        <img src="https://m.media-amazon.com/images/I/51-2tM1l6rL._SX695_.jpg" class="catgorieImgs" alt="WomenFootwear category"/>
+                    </button>
+                    <p>WomenFootwear</p>
+                </div>
+                    <div>
+                    <button class="catgorieImg" onclick="loadCategoryProducts('girlsFootwear')">
+                    
+                        <img src="https://m.media-amazon.com/images/I/61mIHKvRQyL._SY695_.jpg" alt="girlsFootwear category" class="catgorieImgs"/>
+                    </button>
+                    <p>GirlsFootwear</p>
+                </div>
+                </div>
+                <div class="itemsContainer3">
+                    <div>
+                    <button class="catgorieImg" onclick="loadCategoryProducts('menfootwear')">
+                    
+                        <img src="https://m.media-amazon.com/images/I/51LzEqWNWZL._SY695_.jpg" alt="menfootwear category" class="catgorieImgs"/>
+                    </button>
+                    <p>Menfootwear</p>
+                </div>
+                <div>
+                    <button class="catgorieImg" onclick="loadCategoryProducts('Boysfootwear')">
+                    
+                        <img src="https://m.media-amazon.com/images/I/71q7-6nJBaL._SY695_.jpg" alt="Boysfootwear category" class="catgorieImgs"/>
+                    </button>
+                    <p>Boysfootwear</p>
+                </div>
+                </div>
+            </div>
+       </div>
+       <div class="itemsContainer1">
+        <h1 >Cosmetics</h1>
+        <div class="itemsContainer2">
+            <div class="itemsContainer3">
+                <div >
+                <button class="catgorieImg" onclick="loadCategoryProducts('Face')">             
+                
+                    <img src="https://images-static.nykaa.com/media/catalog/product/4/c/4c337686902395718338_1.jpg?tr=w-344,h-344,cm-pad_resize" class="catgorieImgs" alt="Face category"/>
+                </button>
+                <p>Face</p>
+            </div>
+                <div>
+                <button class="catgorieImg" onclick="loadCategoryProducts('Eyes')">
+                
+                    <img src="https://images-static.nykaa.com/media/catalog/product/0/c/0c9573c6902395858553_1.jpg?tr=w-344,h-344,cm-pad_resize" alt="Eyes category" class="catgorieImgs"/>
+                </button>
+                <p>Eyes</p>
+            </div>
+            </div>
+            <div class="itemsContainer3">
+                <div>
+                <button class="catgorieImg" onclick="loadCategoryProducts('Lips')">
+                
+                    <img src="https://images-static.nykaa.com/media/catalog/product/9/4/946f6cbMAYBE00000403ab_1.jpg?tr=w-344,h-344,cm-pad_resize" alt="Lips category" class="catgorieImgs"/>
+                </button>
+                <p>Lips</p>
+            </div>
+            <div>
+                <button class="catgorieImg" onclick="loadCategoryProducts('Hair')">
+                
+                    <img src="https://images-static.nykaa.com/media/catalog/product/f/c/fc4cd34LORAA00000064_1.jpg" alt="Hair category" class="catgorieImgs"/>
+                </button>
+                <p>Hair</p>
+            </div>
+            </div>
+        </div>
+       </div>
+        <div class="itemsContainer1">
+            <h1 >Home-Appliances</h1>
+            <div class="itemsContainer2">
+                <div class="itemsContainer3">
+                    <div >
+                    <button class="catgorieImg" onclick="loadCategoryProducts('AC')">             
+                    
+                        <img src="https://www.ifbappliances.com/media/opti_image/webp/catalog/product/cache/f6d60de4095a6e5204f81c04aa5b766f/1/0/1010_a_p_5_2.webp" class="catgorieImgs" alt="Ac category"/>
+                    </button>
+                    <p>Air Conditioner</p>
+                </div>
+                    <div>
+                    <button class="catgorieImg" onclick="loadCategoryProducts('cooler')">
+                    
+                        <img src="https://i0.wp.com/dyanora.in/wp-content/uploads/2023/04/Air-Cooler-Image-1.png?fit=2000%2C2000&ssl=1" alt="cooler category" class="catgorieImgs"/>
+                    </button>
+                    <p>Coolers</p>
+                </div>
+                </div>
+                <div class="itemsContainer3">
+                    <div>
+                    <button class="catgorieImg" onclick="loadCategoryProducts('washingmachine')">
+                    
+                        <img src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1655370905/Croma%20Assets/Large%20Appliances/Washers%20and%20Dryers/Images/253429_jx9ma4.png?tr=w-640" alt="washingmachine category" class="catgorieImgs"/>
+                    </button>
+                    <p>Washing Machine</p>
+                </div>
+                <div>
+                    <button class="catgorieImg" onclick="loadCategoryProducts('fridzes')">
+                    
+                        <img src="https://i5.walmartimages.com/seo/3-5cu-ft-Compact-Refrigerator-Mini-Fridge-with-Freezer-Krib-Bling-Small-Refrigerator-with-2-Door_0890787a-3dee-4282-a00a-117a0331b8dd.20f6eeb52132da4ebf25d883727b7c69.jpeg" alt="fridzes category" class="catgorieImgs"/>
+                    </button>
+                    <p>Refrigerators</p>
+                </div>
+                </div>
+            </div>
+        </div>   
+        <div class="itemsContainer1">
+            <h1 >Home-Furniture</h1>
+            <div class="itemsContainer2">
+                <div class="itemsContainer3">
+                    <div >
+                    <button class="catgorieImg" onclick="loadCategoryProducts('Sofa')">             
+                    
+                        <img src="https://m.media-amazon.com/images/I/610-RMC8DaL._SX679_.jpg" class="catgorieImgs" alt="Sofa category"/>
+                    </button>
+                    <p>Sofa</p>
+                </div>
+                    <div>
+                    <button class="catgorieImg" onclick="loadCategoryProducts('Chairs')">
+                    
+                        <img src="https://m.media-amazon.com/images/I/41KzuXaT8GL._SX300_SY300_QL70_FMwebp_.jpg" alt="Chair category" class="catgorieImgs"/>
+                    </button>
+                    <p>Chairs</p>
+                </div>
+                </div>
+                <div class="itemsContainer3">
+                    <div>
+                    <button class="catgorieImg" onclick="loadCategoryProducts('Tables')">
+                    
+                        <img src="https://m.media-amazon.com/images/I/813bzPWwibL._SX679_.jpg" alt="Table Tech category" class="catgorieImgs"/>
+                    </button>
+                    <p>Tables</p>
+                </div>
+                <div>
+                    <button class="catgorieImg" onclick="loadCategoryProducts('Wardrobes')">
+                    
+                        <img src="https://m.media-amazon.com/images/I/61ibNijTQRL._SX679_.jpg" alt="Wardobes category" class="catgorieImgs"/>
+                    </button>
+                    <p>Wardrobes</p>
+                </div>
+                </div>
+            </div>
+        </div>       
+        
+        <div class="itemsContainer1">
+                <h1 >GROCERYS</h1>
+                <div class="itemsContainer2">
+                    <div class="itemsContainer3">
+                        <div >
+                        <button class="catgorieImg" onclick="loadCategoryProducts('nuts_and_dryfruits')">             
+                        
+                            <img src="https://img.freepik.com/free-vector/realistic-nuts-round-concept-with-nutmeg-walnut-almond-hazelnut-chestnut-pistachio-cashew-pine-pecan-nuts-isolated_1284-50882.jpg?w=740&t=st=1718090218~exp=1718090818~hmac=d2ad5868f6aa34daf5a9388f0b61fa0fe0614da18daff01f0b54c4fb099a1668" class="catgorieImgs" alt="nuts_and_dryfruits category"/>
+                        </button>
+                        <p>Nuts&Drifruit</p>
+                    </div>
+                        <div>
+                        <button class="catgorieImg" onclick="loadCategoryProducts('Pulses')">
+                        
+                            <img src="https://t3.ftcdn.net/jpg/06/62/73/32/360_F_662733296_YAY9Y4epU7miuyRa8eHNOINraeVRIBwB.jpg" alt="pulses category" class="catgorieImgs"/>
+                        </button>
+                        <p>Pulses</p>
+                    </div>
+                    </div>
+                    <div class="itemsContainer3">
+                        <div>
+                        <button class="catgorieImg" onclick="loadCategoryProducts('Dairy_Products')">
+                        
+                            <img src="https://cdn.vectorstock.com/i/500p/15/47/colorful-of-dairy-products-and-a-cow-vector-50871547.jpg" alt="Dairy_Products category" class="catgorieImgs"/>
+                        </button>
+                        <p>Diary Product</p>
+                    </div>
+                    <div>
+                        <button class="catgorieImg" onclick="loadCategoryProducts('Beverages')">
+                        
+                            <img src="https://as2.ftcdn.net/v2/jpg/00/31/09/07/1000_F_31090768_AovBzvda1FS0fruJFLvtHpdtsuUGF9gF.jpg" alt="Beverages category" class="catgorieImgs"/>
+                        </button>
+                        <p>Softdrinks</p>
+                    </div>
+                    </div>
+                </div>
+        </div>
+     
+    </div> 
+  
+    <!-- slides    -->
+    <div  class="container">
+        <div onclick="loadCategoryProducts('fashion')"class="card">
+          <img class="background" src="https://cdn-prd-strapi.debutify.com/8_Kbs_Bz1y_Oh106o_Hx_Jw7_TKS_Kfcdoci_Ulfow4_VAB_3_O_c8f01d06ea.jpg" alt="">
+  
+          <div class="card-content">
+            <div class="profile-image">
+               
+              <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad-2">
+                <line x1="6" x2="10" y1="11" y2="11" />
+                <line x1="8" x2="8" y1="9" y2="13" />
+                <line x1="15" x2="15.01" y1="12" y2="12" />
+                <line x1="18" x2="18.01" y1="10" y2="10" />
+                <path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
+              </svg> -->
+            </div>
+            
+            
+          </div>
+          <div class="backdrop"></div>
+        </div>
+  
+        <div onclick="loadCategoryProducts('techgadgets')"  class="card">
+          <img class="background" src="https://t3.ftcdn.net/jpg/06/99/39/46/360_F_699394623_943F4N2eqiHH4ktavjrbjlFR5JC62Mgy.jpg" alt="">
+  
+          <div class="card-content">
+            <div class="profile-image">
+              <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad-2">
+                <line x1="6" x2="10" y1="11" y2="11" />
+                <line x1="8" x2="8" y1="9" y2="13" />
+                <line x1="15" x2="15.01" y1="12" y2="12" />
+                <line x1="18" x2="18.01" y1="10" y2="10" />
+                <path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
+              </svg> -->
+            </div>
+          
+            
+          </div>
+          <div class="backdrop"></div>
+        </div>
+  
+        <div onclick="loadCategoryProducts('grocergrocery')" class="card">
+          <img class="background" src="https://png.pngtree.com/thumb_back/fh260/background/20230623/pngtree-grocery-items-in-3d-view-image_3658101.jpg" alt="">
+  
+          <div class="card-content">
+            <div class="profile-image">
+              <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad-2">
+                <line x1="6" x2="10" y1="11" y2="11" />
+                <line x1="8" x2="8" y1="9" y2="13" />
+                <line x1="15" x2="15.01" y1="12" y2="12" />
+                <line x1="18" x2="18.01" y1="10" y2="10" />
+                <path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
+              </svg> -->
+            </div>
+           
+            
+          </div>
+          <div class="backdrop"></div>
+        </div>
+  
+        <div onclick="loadCategoryProducts('homeappliances')"  class="card">
+          <img class="background" src="https://media.istockphoto.com/id/1196974664/photo/set-of-home-kitchen-appliances-in-the-room-on-the-wall-background.jpg?s=612x612&w=0&k=20&c=dUSAMg-LUh6j-4437kz30w8k7KgJiR8yrTTXhGiFh0s=" alt="">
+  
+          <div class="card-content">
+            <div class="profile-image">
+              <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad-2">
+                <line x1="6" x2="10" y1="11" y2="11" />
+                <line x1="8" x2="8" y1="9" y2="13" />
+                <line x1="15" x2="15.01" y1="12" y2="12" />
+                <line x1="18" x2="18.01" y1="10" y2="10" />
+                <path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
+              </svg> -->
+            </div>
+          </div>
+          <div class="backdrop"></div>
+        </div>
+  
+        <div  onclick="loadCategoryProducts('MobilePhones')" class="card">
+          <img class="background" src="https://www.cnet.com/a/img/resize/d18eb80e1ef50c0083f1f72d048da3d44c6945ec/hub/2023/07/05/ffb5dc55-6884-4bb7-b9e1-6c14fe3d841c/samsungs.jpg?auto=webp&fit=crop&height=675&width=1200" alt="">
+  
+          <div class="card-content">
+            <div class="profile-image">
+              <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad-2">
+                <line x1="6" x2="10" y1="11" y2="11" />
+                <line x1="8" x2="8" y1="9" y2="13" />
+                <line x1="15" x2="15.01" y1="12" y2="12" />
+                <line x1="18" x2="18.01" y1="10" y2="10" />
+                <path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
+              </svg> -->
+            </div>
+            
+            
+          </div>
+          <div class="backdrop"></div>
+        </div>
+
+
+
+          <div onclick="loadCategoryProducts('Beverages')" class="card">
+            
+            <img class="background"   src="https://img.freepik.com/free-photo/fresh-cocktails-wooden-table-with-leafs-generative-ai_188544-12374.jpg?w=1060&t=st=1718716475~exp=1718717075~hmac=8219648ec3a0d754499a10f358f5c51f87866906c410541f25c473c5d4ce8410g" alt="">
+    
+            <div class="card-content">
+              <div class="profile-image">
+               
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad-2">
+                  <line x1="6" x2="10" y1="11" y2="11" />
+                  <line x1="8" x2="8" y1="9" y2="13" />
+                  <line x1="15" x2="15.01" y1="12" y2="12" />
+                  <line x1="18" x2="18.01" y1="10" y2="10" />
+                  <path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
+                </svg> -->
+              </div>
+    
+              
+            </div>
+            <div class="backdrop"></div>
+          </div>
+
+
+    </div>   
+        <!--Kichen store-->
+        <div>
+         
+        <h1 style="font-size: 20px;font-weight: 550;margin: 30px;" >Kitchen and Dining</h1>
+        <div class="categoriesContainer">
+        <div class="categoriesContainer2">
+       
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                    <p style="text-align: center;font-size: 16px;font-weight: 580;">Cookware</p>
+                    <button class="catgorieImges" onclick="loadCategoryProducts('Cookware')">
+                       <img src="https://m.media-amazon.com/images/I/71m+aVLLQXL._AC_UL480_FMwebp_QL65_.jpg" alt="Audio category" class="catgorieSubImg"/>
+                    </button>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <p style="text-align: center;font-size: 16px;font-weight: 580;">GasStoves</p>
+                    <button class="catgorieImges" onclick="loadCategoryProducts('GasStoves')">
+                    <img src="https://m.media-amazon.com/images/I/712Ov74r0hL._AC_UL480_FMwebp_QL65_.jpg" alt="Audio category" class="catgorieSubImg"/>
+                    </button>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <p style="text-align: center;font-size: 16px;font-weight: 580;">StorageContainer</p>
+                    <button class="catgorieImges" onclick="loadCategoryProducts('StorageContainer')">
+                    <img src="https://m.media-amazon.com/images/I/71WWVJGy25L._SX425_.jpg" alt="Audio category" class="catgorieSubImg"/>
+                    </button>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <p style="text-align: center;font-size: 16px;font-weight: 580;">DinnerSets</p>
+                    <button class="catgorieImges" onclick="loadCategoryProducts('DinnerSets')">
+                    <img src="https://m.media-amazon.com/images/I/51Sqab+pRQL._AC_UL480_FMwebp_QL65_.jpg" alt="Audio category" class="catgorieSubImg"/>
+                    </button>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <p style="text-align: center;font-size: 16px;font-weight: 580;">Kitchentools</p>
+                    <button class="catgorieImges" onclick="loadCategoryProducts('Kitchentools')">
+                    <img src="https://m.media-amazon.com/images/I/41KnWZMirUL._SX300_SY300_QL70_FMwebp_.jpg" alt="Audio category" class="catgorieSubImg"/>
+                    </button>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <p style="text-align: center;font-size: 16px;font-weight: 580;">Bakeware</p>
+                    <button class="catgorieImges" onclick="loadCategoryProducts('Bakeware')">
+                    <img src="https://m.media-amazon.com/images/I/51Lr+HoP1mL._SY300_SX300_.jpg" alt="Audio category" class="catgorieSubImg"/>
+                    </button>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <p style="text-align: center;font-size: 16px;font-weight: 580;">Servewave</p>
+                    <button class="catgorieImges" onclick="loadCategoryProducts('Servewave')">
+                    <img src="https://m.media-amazon.com/images/I/81NyqetYHWL._SX522_.jpg" alt="Audio category" class="catgorieSubImg"/>
+                    </button>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <p style="text-align: center;font-size: 16px;font-weight: 580;">Mixergrinders</p>
+                    <button class="catgorieImges" onclick="loadCategoryProducts('Mixergrinders')">
+                    <img src="https://m.media-amazon.com/images/I/5173efeS9yL._SX522_.jpg" alt="Audio category" class="catgorieSubImg"/>
+                    </button>
+                </div>
+           
+         </div>
+         </div>
+      </div>
+      <!--Discount Details-->     
+       <div>      
+        <div id="clothesGallery" class="gallery-wrap">
+            <h2 class="category-heading">Up to 50% off | New Fashion Stores near by</h2>
+            <div class="gallery"></div>            
+                <button class="backbtn" >&lt;</button>
+                <button class="nextbtn" >&gt;</button>           
+        </div>
+        
+        <div id="electronicsGallery" class="gallery-wrap">
+            <h2 class="category-heading">Up to 30% off | Best Sellers in Electronics</h2>
+            <div class="gallery"></div>
+            <button class="backbtn" >&lt;</button>
+            <button class="nextbtn" >&gt;</button>
+        </div>
+        
+        <div id="groceriesGallery" class="gallery-wrap">
+            <h2 class="category-heading">Up to 20% off | Dryfruits and Groceries</h2>
+            <div class="gallery"></div>
+            <button class="backbtn" >&lt;</button>
+            <button class="nextbtn" >&gt;</button>
+        </div>
+
+       </div>
+  <!-- start electronics device arrange with rows -->
+        <div class="categoriesContainer">
+            <div class="categoriesContainer1">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <p style="text-align: center; font-size: 13px; font-weight: 580; ">Audio</p>
+                    <button class="catgorieImges" onclick="loadCategoryProducts('Audio')">
+                        <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR371fwPprYXIAkPw4qYoc_-njJxHt-Ii1Pw_8EcrXvdIiYa4tHk7AeqG4hof6kuf29zct9YF5QjxogE4Ta95jMXtWCaw1WPLx325JZhUFSrCn-Fpxc-XmgGg&usqp=CAE" alt="Audio category" class="catgorieSubImg"/>
+                    </button>
+                
+                </div>
+        
+                <div style="display: flex; flex-direction: column; align-items: center;">
+            <p style="text-align: center;font-size: 13px;font-weight: 580; ">Computers</p>
+            <button class="catgorieImges" onclick="loadCategoryProducts('Computers')">
+                
+                <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ8lQh_a4mJAxawcBUNeal39cYoDt28oY3d04l_EqUVsLB9t13t7JloeXpuxjHJHakfjnLp5pxV2MzKgJVDV5Fz2-MTR1hywwgIEPtwXgK9AB45lJbkV68g&usqp=CAE" class="catgorieSubImg"  alt="computer category"/>
+            </button>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <p style="text-align: center;font-size: 13px;font-weight: 580;">Mobile Phones</p>
+                <button class="catgorieImges" onclick="loadCategoryProducts('MobilePhones')">
+                    
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT5ESPE_QTYcEfdXZ5p1XkeN7gUHL1qhDQEgMIlKsX_BlV39TfwzDqfTJ3FXhpChWhnxYDziQ2Rn1tJXUokndXBB28CFDZPaBq87Wns3oPAxKs2B-XdWEgK0w&usqp=CAE" alt="Mobile Phones category" class="catgorieSubImg"/>
+                </button>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <p style="text-align: center;font-size: 13px;font-weight: 580;">Televisions</p>
+            <button class="catgorieImges" onclick="loadCategoryProducts('Televisions')">
+                
+                <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSdDJFd_7350r2DfiROvIUSGsaw2Z-vWx4HzjX77ytmkrqHFXU8ws0amPPgg2_7i4_FSSBnR65F7G5SF_AMIBTcJ-qcfKaAoIwc04xoABq0g19mS8yeUJkemw&usqp=CAE" alt="Televisions category" class="catgorieSubImg"/>
+            </button>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <p style="text-align: center;font-size: 13px;font-weight: 580;">Tablets</p>
+            <button class="catgorieImges" onclick="loadCategoryProducts('Tablets')">
+                
+                <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSIS3XpKxAzyai0M8o8m3ylszqxivceZMM-QfBVgstrJcSxxnsN6ElMVewwZHUf0f-Dja25RHDSl-gdFhYHibJHELqplCUB9JVdWIwON_C3PVOEiHg9uHFT&usqp=CAE" alt="Tablets category" class="catgorieSubImg"/>
+            </button>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <p style="text-align: center;font-size: 13px;font-weight: 580;">Smart Home</p>
+        <button class="catgorieImges" onclick="loadCategoryProducts('SmartHome')">
+            
+            <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSw3FaqnG6Zidna7oFNtvXk6Xd3129RZKIBvnWW_awiYnLe5RtjEpmZesH7ellnOsMcPTFlU9CDnGgrvIrhVeeqflbGRNp56Wi4bri8fBbU8tXmX2aa9Iu9czE&usqp=CAE" alt="Smart Home category" class="catgorieSubImg"/>
+        </button>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <p style="text-align: center;font-size: 13px;font-weight: 580;">Cameras</p>
+        <button class="catgorieImges" onclick="loadCategoryProducts('Cameras')">
+            
+            <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTFCYNDyazZclYkuai8mt-gitic0CP5f8jIlu13YzKKYAUpetFjZd-Njuo1ykxX72ta7wq2vtgfeFtuKmhUFtS34ntxUTGSD_SKICExT43Uy9RFF1k0L-pVyA&usqp=CAE" class="catgorieSubImg" alt="Cameras category"/>
+        </button>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <p style="text-align: center;font-size: 13px;font-weight: 580;">Gaming</p>
+        <button class="catgorieImges" onclick="loadCategoryProducts('Gaming')">
+            
+            <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQwD3dkpZ-DGrg8mdYCOXF1SjhMvKP42hwMlAr-MyCeo6E_LuFevLiEfSHw4hKezLdfH_Zf2933aPYBQHGgIMTVaddBsP5C3Rbs2H8TqlB-Kj3-St8_827M&usqp=CAE" alt="Gaming category" class="catgorieSubImg"/>
+        </button>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <p style="text-align: center;font-size: 13px;font-weight: 580;">Wearable Tech</p>
+        <button class="catgorieImges" onclick="loadCategoryProducts('SmartWatches')">
+            
+            <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ9xGNN-dPzalloQe-tftrAFzEzJETg1hVPyb66EJzPIYTN6iVn1mndFM9ATZGdoxgXcrMQ70mQt-mH2gvAqKt8-oxhNou7_JxgfeXMQVX35FpGP47HocbRyw&usqp=CAE" alt="Wearable Tech category" class="catgorieSubImg"/>
+        </button>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <p style="text-align: center;font-size: 13px;font-weight: 580;">Accessories</p>
+        <button class="catgorieImges" onclick="loadCategoryProducts('Accessories')">
+            
+            <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOJT3_j3x3gNo48I0-m328PjjA1jMOxZvOTL6W5ZQdROQ4Ux3FXYTmXxsqXvkQulvkfVzFENmB1Agv4HHaCJ5tNBixqrwk2drR2EjCp6RkTctWHQxSRmPQ&usqp=CAE" alt="Accessories category" class="catgorieSubImg"/>
+        </button>
+        </div>
+        </div>
+        
+        </div>
+<!-- end electronics device arrange with rows -->
+          
+<!-- start extra elctronics -->
+     
+<div id="suffle-container">
+    <div id="containerId"></div>
+</div>
+ <!-- end extra electronics -->
+
+    <footer class="greatindia-footer">
+            <div class="footer-top">
+             <a href="#top" class="back-to-top">Back to top</a>
+            </div>
+             
+            <footer class="footer">
+                <div class="footerContainer">
+                    <div class="row">
+                        <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacypolicy</a></li>
+                        </ul>
+                        </div>
+                        <div class="footer-col">
+                        <h4>get help</h4>
+                        <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        </ul>
+                        </div>
+                        <div class="footer-col">
+                        <h4>contact us</h4>
+                        <ul>
+                        <li><a href="#">greatindia@gi.com</a></li>
+                        <li><a href="#">9xxxxxxxxx</a></li>
+                        </ul>
+                        </div>
+                        <div class="footer-col">
+                        <h4>follow us</h4>
+                        <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+    </footer>
+</div>
+
+    <script src="ProductsList.js"></script>    
+    <script src="home.js"></script>
+    <script src="common.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            updateCartCount();
+            searchItems();
+        });
+    </script>
+   
+    
+</body>
+</html>

@@ -1,0 +1,192 @@
+
+.procontainer {
+    margin-top: 50px;
+    text-align: center;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    height: 300px;
+}
+
+.procontainer h1 {
+    color: #28a745; /* Green color */
+    margin-top: 30px;
+}
+
+.procontainer p {
+    margin-bottom: 20px;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.procontainer button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745; /* Green color */
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.procontainer button:hover {
+    background-color: #218838; /* Darker green color on hover */
+}
+
+#similarItems{
+  
+   justify-items: center;
+   padding-left:  40px; /* Add padding to the sides of the container */
+   padding-right:  40px;
+    
+}
+.similar-items {
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(4,  1fr); /* Adjust minmax width as needed */
+    gap: 20px;
+    justify-items: center; /* Center items horizontally within the grid */
+}
+.productListContainer h1{
+    font-size: 28px;
+    margin: 0px;
+    padding: 0px;
+    /* overflow: hidden; */
+}
+.itemMainContainer {
+    position: relative;
+    align-items: center;
+    margin: 20px auto;
+    margin-top: 30px;   
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr);  */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px; 
+    overflow-y:auto;
+    max-height: 700px;
+}
+.itemMainContainer::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
+}
+.itemsContainer {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 4px 4px 5px 0px rgba(143, 141, 141, 0.75);
+  
+    display: flex;
+    flex-direction: column; /* Ensure item details flow vertically */
+}
+
+.itemsDetails {
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 20px;
+    height: 450px;
+}
+
+.priceCart {
+    margin-top: 0px;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
+}
+#imgContiner{
+    height: 300px; /* Set a fixed height for the container */
+    /* overflow: hidden;  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+.itemImg {  
+  
+    max-width: auto; /* Allow the image to scale proportionally */
+    height: 100%; /* Ensure the height fills the container */
+    /* object-fit: cover;  */
+    object-fit:fill;
+    margin: 20px auto;
+}
+
+
+.rating {
+    font-size: 26px;
+    color: rgb(252, 143, 0);
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.itemMatter {
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.itemMatter h3{
+ 
+  font-size: 15px;
+  /* height: 40px; */
+}
+
+
+.priceContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.productsListContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.prices {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.mainprice {
+    font-size: 21px;
+    font-weight: 550;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.discount {
+    font-size: 16px;
+    font-weight: 550;
+    color: green;
+}
+.priceCartBtn{
+    margin-top: 0px;
+    padding: 10px;
+}
+.addCart {
+    width: 100%;
+    height: 40px;
+    /* border: none; */
+    /* background-color: rgb(252, 187, 11); */
+    background-color: transparent;
+    border-radius: 5px;
+    
+    border: 2px solid  rgb(252, 143, 0);
+    padding-bottom:5px;
+    color:  rgb(252, 143, 0);
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 0px;
+    cursor: pointer;
+}
+
+.addCart:hover {
+    background-color:  rgb(252, 143, 0);
+    border: none;
+    color: white;
+}
