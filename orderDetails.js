@@ -65,9 +65,11 @@ function displayOrderDetails() {
 
     // Display each item in the order
     order.items.forEach(item => {
+       // console.log('Item:', item);
         const itemDiv = document.createElement('div');
         itemDiv.classList.add('order-item');
-
+ // Ensure item.mainprice is parsed correctly
+ const price = typeof item.mainprice === 'string' ? parsePrice(item.mainprice) : item.mainprice;
         // Calculate total price for the item if not cancelled
         if (item.itemSubstatus !== 'cancelled') {
             const itemTotalPrice = parsePrice(item.mainprice) * item.count;
@@ -82,7 +84,7 @@ function displayOrderDetails() {
                     <div class="item-info">
                         <p class="item-name"><strong>Name:</strong> ${item.name}</p>
                         <p class="item-quantity"><strong>Quantity:</strong> ${item.count}</p>
-                        <p class="item-price"><strong>Total:</strong> ₹${item.mainprice.toFixed(2)}</p>
+                     <p class="item-price"><strong>Total:</strong> ₹${price.toFixed(2)}</p>
                     </div>
                 </div>
             `;
@@ -96,7 +98,7 @@ function displayOrderDetails() {
                     <div class="item-info">
                         <p class="item-name"><strong>Name:</strong> ${item.name}</p>
                         <p class="item-quantity"><strong>Quantity:</strong> ${item.count}</p>
-                        <p class="item-price"><strong>Total:</strong> ₹${item.mainprice.toFixed(2)}</p>
+                        <p class="item-price"><strong>Total:</strong> ₹${item.mainprice}</p>
                         <p class="item-price"><strong>Status:</strong> Cancelled</p>
                     </div>
                 </div>
@@ -229,6 +231,11 @@ function requestCancel(orderId) {
     if (confirmation) {
         // Update order status to 'Cancelled'
         order.status = 'Cancelled';
+       // Update substatus of each item in the order to 'cancelled'
+       order.items.forEach(item => {
+        item.itemSubstatus = 'cancelled';
+    });
+        
 
         // Update local storage with the new orders array
         localStorage.setItem('orders', JSON.stringify(orders));
@@ -260,7 +267,9 @@ function requestReturn(orderId) {
     if (confirmation) {
         // Update order status to 'Returned'
         order.status = 'Returned';
-
+        order.items.forEach(item => {
+            item.itemSubstatus = 'cancelled';
+        })
         // Update local storage with the new orders array
         localStorage.setItem('orders', JSON.stringify(orders));
 

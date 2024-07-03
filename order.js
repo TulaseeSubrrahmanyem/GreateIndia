@@ -60,7 +60,7 @@ function displayOrders() {
             default:
                 statusClass = '';
         }
-
+       
         // Display order ID and other details
         orderDiv.innerHTML = `<h1 style="margin-bottom:5px;" class="${statusClass}"> ${order.status}</h1>
                               <p style="margin-bottom:5px;"><strong>Order-Id:</strong>${order.orderId}</p>
@@ -76,10 +76,7 @@ function displayOrders() {
 
             const totalPrice = parsePrice(item.mainprice) * item.count;
             // Render cancel button based on itemSubstatus
-            const cancelButtonHTML = item.itemSubstatus === 'cancelled'
-                ? `<span class="cancelled-text">Cancelled</span>`
-                : `<button class="deleteItemBtn" onclick="cancelOrderItem('${order.orderId}', '${item.id}', this)">Cancel Item</button>`;
-
+               
             itemDiv.innerHTML = `
                 <div class="item-details">
                     <div class="item-image">
@@ -143,6 +140,8 @@ function cancelOrderItem(orderId, itemId) {
     const orderIndex = orders.findIndex(order => order.orderId === orderId);
 
     if (orderIndex !== -1) {
+      
+
         // Convert itemId to string if it's not already
         itemId = String(itemId);
 
@@ -152,30 +151,21 @@ function cancelOrderItem(orderId, itemId) {
         if (itemIndex !== -1) {
             // Update the item's substatus to "cancelled"
             orders[orderIndex].items[itemIndex].itemSubstatus = "cancelled";
-             // Check if all items in the order are cancelled
-             const allItemsCancelled = orders[orderIndex].items.every(item => item.itemSubstatus === "cancelled");
 
-             // If all items are cancelled, update order status to "Cancelled"
-             if (allItemsCancelled) {
-                 orders[orderIndex].status = "Cancelled";
-             }
- 
-             // Save the updated orders back to local storage
-             localStorage.setItem('orders', JSON.stringify(orders));
+            // Check if all items in the order are cancelled
+            const allItemsCancelled = orders[orderIndex].items.every(item => item.itemSubstatus === "cancelled");
+
+            // If all items are cancelled, update order status to "Cancelled"
+            if (allItemsCancelled) {
+                orders[orderIndex].status = "Cancelled";
+            }
 
             // Save the updated orders back to local storage
             localStorage.setItem('orders', JSON.stringify(orders));
 
-            // Update the UI: Find the corresponding item in the DOM and update its status or remove it
-            const itemElement = document.querySelector(`[data-order="${orderId}"][data-item="${itemId}"]`);
-            if (itemElement) {
-                // Example: Update status text
-                itemElement.querySelector('.status').textContent = 'Cancelled';
-                // Optionally, disable or hide the delete button
-                itemElement.querySelector('.deleteItemBtn').disabled = true;
-            }
-            displayOrders()
-            // Optional: Display a success message or perform any other action
+            // Update the UI
+            displayOrders();
+
             console.log(`Item with itemId ${itemId} in order with orderId ${orderId} cancelled successfully.`);
         } else {
             console.error(`Item with id ${itemId} not found in order items array.`);
@@ -184,6 +174,7 @@ function cancelOrderItem(orderId, itemId) {
         console.error(`Order with id ${orderId} not found.`);
     }
 }
+
 
 
 
