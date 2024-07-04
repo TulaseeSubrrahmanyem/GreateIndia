@@ -331,7 +331,7 @@
                  
                 // Check if product is in favorites
                 const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-                const isFavorite = favorites.some(items => items.name === item.name);
+                const isFavorite = favorites.some(items => items.id === item.id);
             
                 // Check if product is in cart
                 const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -405,7 +405,7 @@
                     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
                     // Check if product is already in favorites
-                    const existingIndex = favorites.findIndex(item => item.name === productData.name);
+                    const existingIndex = favorites.findIndex(item => item.id === productData.id);
 
                     if (existingIndex !== -1) {
                         // Remove from favorites

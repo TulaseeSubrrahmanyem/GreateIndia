@@ -203,7 +203,9 @@ function requestRefund(orderId) {
     if (confirmation) {
         // Update order status to 'Refunded'
         order.status = 'Refunded';
-
+        order.items.forEach(item => {
+            item.itemSubstatus = 'cancelled';
+        });
         // Update local storage with the new orders array
         localStorage.setItem('orders', JSON.stringify(orders));
 
@@ -272,7 +274,7 @@ function requestReturn(orderId) {
         order.status = 'Returned';
         order.items.forEach(item => {
             item.itemSubstatus = 'cancelled';
-        })
+        });
         // Update local storage with the new orders array
         localStorage.setItem('orders', JSON.stringify(orders));
 

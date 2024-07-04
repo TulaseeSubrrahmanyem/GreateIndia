@@ -32,7 +32,11 @@ document.addEventListener('DOMContentLoaded', function () {
     registerPanel.classList.add('hidden');
   }
 
-  
+   // Check if the user is already logged in
+   if (localStorage.getItem('loggedIn') === 'true') {
+      // Redirect to homepage if already logged in
+      window.location.href = "homepage.html";
+  }
   // Event listener for login form submission
   document.getElementById('loginForm').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -98,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
       emailErrorMessage.innerText = "";
       passwordErrorMessage.innerText = "";
 
+      localStorage.setItem('loggedIn', 'true');
       // Redirect to homepage after successful login (for demo)
       window.location.href = "homepage.html";
     } else {

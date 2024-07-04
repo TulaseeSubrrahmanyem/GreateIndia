@@ -35,6 +35,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const upiDetails = document.getElementById("upiDetails");
     let checkoutItems
 
+    let totalPrice = 0;
+    let totalDummyPrice = 0;
+    let totalQuantity = 0;
+    let totaldummyoriginal=0
     // function displayCheckoutItem(item) {
     //     if (!item.count) {
     //         item.count = 1;
@@ -247,7 +251,7 @@ document.addEventListener("DOMContentLoaded", function() {
             checkoutItems.push(buyingItem);
         } 
 
-       
+    
 
         const orderItemsHTML = checkoutItems.map(item => {
             
@@ -262,11 +266,21 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         
             let itemPrice = parseFloat(item.mainprice);
-            console.log(typeof(itemPrice));
             if (isNaN(item.mainprice)) {
-                // Replace all commas globally before parsing
                 itemPrice = parseFloat(item.mainprice.replace(/,/g, ''));
             }
+            
+            let dummyPrice = parseFloat(item.dummyprice);
+            if (isNaN(dummyPrice)) {
+                dummyPrice = parseFloat(item.dummyprice.replace(/,/g, ''));
+            }
+
+            const itemTotalPrice = itemPrice * item.count;
+            const itemTotalDummyPrice = dummyPrice * item.count;
+            totaldummyoriginal=itemTotalPrice + itemTotalDummyPrice
+            totalPrice += itemTotalPrice;
+            totalDummyPrice += itemTotalDummyPrice;
+            totalQuantity += item.count;
             // Return the HTML string for the item
             return `
                <div class="order-item">
@@ -288,7 +302,11 @@ document.addEventListener("DOMContentLoaded", function() {
                          </div>
                         <div class="overalls">
                         <p class="keyorder"><strong>Price    :</strong> </p>
-                        <p class="dataorder">&#8377;${itemPrice}</p>
+                        <p class="dataorder">&#8377;${itemTotalPrice}</p>
+                        </div>
+                         <div class="overalls">
+                        <p class="keyorder"><strong>discount    :</strong> </p>
+                        <p class="dataorder">&#8377;${itemTotalDummyPrice} ${item.discount}</p>
                         </div>
                         <div class="overalls">
                         <p class="keyorder"><strong>Quantity :</strong> </p>
@@ -329,14 +347,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
         
         // Add tax to the subtotal
-        const tax = 35;
-        const totalPrice = subtotal + tax;
+        // const tax = 35;
+        // const totalPrice = subtotal + tax;
         
         // Generate the HTML for the order details section
         orderDetailsContainer.innerHTML = `
            <div class='reviewDetail'>
-            <div id="orderInfo">
-           
+            <div id="orderInfo">           
                 ${orderItemsHTML}
             </div>
             <div class='payInfo'>
@@ -347,6 +364,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 ${selectedMethod.value === "upi" ? `<p><strong>UPI ID:          </strong><span>${upiId}</span></p>` : ''}
                 ${selectedMethod.value === "cod" ? `<p><strong>Payment Method:      </strong> <span>Cash on Delivery</span></p>` : ''}
                 </div>
+                <hr/>
                 </div>
                 <div class="shipping-info">
                 <h5 class="shipinf">Shipping Information:</h5>
@@ -377,20 +395,30 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                 </div>
             </div>
+            <hr/>
             <div class="price-total">
                 <h5 class="payinf">Price Total:</h5>
                 <div class="total">
                 <div class="tt">
-                <p class="sree"><strong>Tax:</strong> </p>
-                <p class="sreenu">&#8377;${tax}</p>
+                    <p class="sree"><strong>Price(${totalQuantity}):</strong> </p>
+                    <p class="sreenu" style="opacity:0.6">&#8377;${totaldummyoriginal.toFixed(2)}</p>
                 </div>
+                 
+                 <div class="tt">
+                    <p class="sree"><strong>Discount:</strong> </p>
+                    <p class="sreenu" style="color:green ;opacity:0.6"> -&#8377;${totalDummyPrice.toFixed(2)}</p>
+                </div>
+               
                 <div class="tt">
                 <p class="sree"><strong>Total:</strong> </p>
-                <p class="sreenu">&#8377;${totalPrice.toFixed(2)}</p>
+                <p class="sreenu" >&#8377;${totalPrice.toFixed(2)}</p>
                 
                 </div>
+               
+                
             </div>
-        
+            <hr/>
+             <p class='checkout-total1' style="color:green;margin:20px">You will save &#8377 ${totalDummyPrice.toFixed(2)}on this order</p>
             </div>
             
         </div> `;        

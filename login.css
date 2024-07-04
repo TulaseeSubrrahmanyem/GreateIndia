@@ -1,4 +1,3 @@
-
 body {
   /* background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg') bottom center no-repeat; */
     background-size: 300%;
@@ -46,15 +45,102 @@ body {
 .form-wrapper {
   width: 30%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:400");
+
+* {
+	box-sizing: border-box;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+
+
+/* body {
+	font-family: Raleway, sans-serif;
+	text-align: center;
+	margin: 0;
+	padding: 1rem;
+	background-color: rgba(10, 12, 18, 1);
+	color: white;
+	min-height: 100vh;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+} */
+
+
+
+:root {
+	--angle: 90deg;	
+}
+
+.form{
+
+	margin: max(2rem, 3vw);
+	border: 0.35rem solid;
+	padding: 2vw;
+	border-image: conic-gradient(
+      from var(--angle),
+      rgb(159, 140, 228),
+      rgb(116, 187, 234) 0.1turn,
+      rgb(159, 159, 159) 0.15turn,
+      rgba(168, 239, 255, 0.1) 0.25turn
+    )
+    30;animation: borderRotate 2.5s linear infinite forwards;
+}
+
+
+@keyframes borderRotate {
+	100% {
+		--angle: 420deg;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
 .form {  
    background-image: url('_1258-30484.jpg?w=740&t=st=1719394800~exp=1719395400~hmac=c9f21eeb2143e59770dab6d4c6a53449348165fee0299abd543b0ae35b2f94f6');  
    background: #fff;    
     backdrop-filter: blur(15px);  
-  border: 1px solid #fff;
-    border-radius: 0px;
-
-  border: 1px solid #ccc;
+ 
   padding: 18px;
   box-shadow: black;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -264,7 +350,7 @@ section .girl { width: 630px;
 }
  
 .leaves .set div:nth-child(1) {
-  left: 3%;
+ left: 3%;
   animation: animate 22s linear infinite;
 }
  
@@ -577,15 +663,22 @@ p {
 /* Media Queries */
 @media (max-width: 1200px) {
   .form {
-    width: 75%;
+    width: 100%;
     height: auto;
     padding: 20px;
   }
-
+ 
   .form-wrapper {
     width: 50%;
   }
+  .form-style{ width: 300px;
+
+  }
+
+ 
+
 }
+
 
 @media (max-width: 768px) {
   .form {
@@ -593,7 +686,10 @@ p {
     height: auto;
     padding: 15px;
   }
+  .form-style{ 
+    width: 300px;
 
+  }
   .form-wrapper {
     width: 70%;
   }
@@ -601,30 +697,51 @@ p {
   .custom-alert {
     font-size: 20px;
   }
-
-  .laf, .leaf {
-    width: 50px;
-    height: 50px;
-  }
+  .btn{height: 30px;
+    width: 90px;
+   
+     }
+     
+       
 }
 
-@media (max-width: 480px) {
+@media (max-width: 568px) {
   .form {
-    width: 100%;
-    height: auto;
+    width: 70%;
+    height: 90%;
     padding: 10px;
   }
+  .form-style{
+     width: 200px;
 
+  }
+  
   .form-wrapper {
     width: 100%;
   }
-
+.error-message{ 
+  font-size: 10px;
+  padding-right: 15px;         
+}
   .custom-alert {
     font-size: 18px;
   }
 
-  .laf, .leaf {
-    width: 40px;
-    height: 40px;
+  .btn{
+    height: 30px;
+    width: 80px;
+       
+    }
+
+  .btntoggle {
+    font-weight: 300;
   }
+
+
+
+
+
+ 
+
+  
 }

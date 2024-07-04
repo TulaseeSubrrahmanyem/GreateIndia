@@ -150,6 +150,7 @@
     display: flex;
     flex-direction: column;
     justify-content: start;
+    margin-top: 10px;
 }
 
 .mainprice {
@@ -157,12 +158,14 @@
     font-weight: 550;
     margin-bottom: 0px;
     margin-top: 0px;
+  
 }
 
 .discount {
     font-size: 16px;
     font-weight: 550;
     color: green;
+    margin-top: 10px;
 }
 .priceCartBtn{
     margin-top: 0px;

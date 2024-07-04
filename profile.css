@@ -17,11 +17,14 @@ body, html {
 .profile-wrapper h1 {
   text-align: center;
   font-size: 25px;
+  margin: 25px;
+  margin-top: 0px;
 }
 
 .profile-container {
   display: flex;
-  border: 2px solid #b1b1b1;
+  border: 2px solid #ccc;
+  background-color: #e1e1eb;
   width: 100%;
   padding: 10px;
   border-radius: 10px;
@@ -75,7 +78,8 @@ body, html {
 }
 
 .profileTasksContainer {
-  border: 2px solid #b1b1b1;
+  border: 2px solid #ccc;
+  background-color: #e1e1eb;
   padding: 30px;
   display: flex;
   flex-direction: row;
