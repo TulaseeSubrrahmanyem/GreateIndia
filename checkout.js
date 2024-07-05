@@ -27,9 +27,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Retrieve the checkout item from local storage
     // const buyingItem = JSON.parse(localStorage.getItem('buyingItem'));
-    const buyingItem = JSON.parse(localStorage.getItem('selectedProductData'));
-   // const cartItems = JSON.parse(localStorage.getItem('checkoutItems')) || [];
-   const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const buyingItem = JSON.parse(localStorage.getItem('buyingItem'));
+    // const cartItems = JSON.parse(localStorage.getItem('checkoutItems')) || [];
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
     const paymentMethodRadios = document.querySelectorAll('input[type="radio"][name="paymentMethod"]');
     const cardDetails = document.getElementById("cardDetails");
     const upiDetails = document.getElementById("upiDetails");
@@ -524,7 +524,7 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem('orders', JSON.stringify(orders));
     
          // Store the last ordered items and their categories
-    const lastOrderedItems = [...cartItems, buyingItem].filter(item => item);
+    const lastOrderedItems = [...checkoutItems].filter(item => item);
    
     localStorage.setItem('lastOrderedItems', JSON.stringify(lastOrderedItems));
     
@@ -532,11 +532,15 @@ document.addEventListener("DOMContentLoaded", function() {
         if (cartItems.length > 0) {
             localStorage.removeItem('checkoutItems');
         }
-    
+      
+
         // Clear the buying item from local storage if it's a direct purchase
         localStorage.removeItem('buyingItem');
         localStorage.removeItem('selectedProductData');
-        localStorage.removeItem('cart');
+        if(!buyingItem){
+            localStorage.removeItem('cart');
+        }
+       
     
         // Redirect to the thank you page
         window.location.href = "thanksPage.html";

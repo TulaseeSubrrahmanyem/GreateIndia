@@ -144,7 +144,7 @@ function createProductDiv(item, gallery, mainCategoryName,subCategories) {
         <div data-product='${productDataString}' onclick="listOfRelated(this)">
             <img src="${item.image || 'https://via.placeholder.com/150'}" alt="${item.name}">
             <div class="product-overlay">
-                <p>${item.name}</p>
+                <p  >${item.name}</p>
                 <p>${item.brand}</p>
             </div>
         </div>
@@ -277,8 +277,8 @@ function createLoadItemsDiv(item, mainCategoryName, categoryNameLower) {
                
             </div>
              <div class="product-overl">
-                    <p>${truncatedName}</p>
-                    <p>&#8377;${item.mainprice}</p>
+                    <p style='font-weight:550;'>${truncatedName}</p>
+                    <p st>&#8377;${item.mainprice}</p>
                     <button type='button' class="suffleADTbutton" data-product='${productDataString}' data-size="${selectedSize}" onclick="addToCart(this)">Add to Cart</button>
             </div>
         </div>

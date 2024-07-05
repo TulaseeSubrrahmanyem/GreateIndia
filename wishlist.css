@@ -34,8 +34,9 @@ table {
 }
 .tr {
     border: none;
-    
+   
 }
+ 
 th, td {
     border-bottom: 1px solid #ccc;
     height: 40px;
@@ -96,6 +97,7 @@ th, td {
 }
 .date {
     margin-bottom: 0px;
+    text-align: center;
 }
 .addCart {
     width: 240px;
@@ -118,7 +120,7 @@ th, td {
     width: 10%;
     padding-left: 50px;
     margin-top: 30px;
-  
+ 
 }
 .dleteIcon{
     border: none;
@@ -127,212 +129,654 @@ th, td {
     padding-top:25px;
 }
 .remove-btn {
-    
-    border: none;   
+   
+    border: none;  
     /* font-size: 35px; */
     background-color: transparent;  
 }
-
+ 
 /* Responsive styles
-
-/* Additional adjustments for larger screens */
- @media (min-width: 1201px) {
+/* Large devices (large desktops, 1200px and down) */
+@media (max-width: 1200px) {
     .wishlist-container {
-        max-width: 1200px;
+        margin: 100px auto;
+        padding: 40px;
+        width: 90%;
+       
+    }
+    .containers {
+        margin-top: -20px;
+        text-align: center;
+        margin-bottom: 50px;
     }
     .heart {
         font-size: 80px;
     }
-    .nameImgClass, .priceRow, .brandClass, .addButtonClass, .remove-btn {
-        width: auto;
-        display: table-cell;
-        text-align: left;
+    /* Add necessary CSS styles for the table */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    #back-btn {
+        padding: 10px 20px;
+        background-color: #181818;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    .wishlist-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .tr {
+        border: none;
+       
+    }
+    th, td {
+        border-bottom: 1px solid #ccc;
+        height: 80px;
+    }
+    .td {
+        height: 120px;
+    }
+    .nameImgClass {
+        width: 20%;
     }
     .imgAndNameContainer {
+        display: flex;
         flex-direction: row;
         align-items: center;
         padding-left: 10px;
     }
-    .wishlist-item-img {
+    .imgContainer {
         width: 95px;
         height: 95px;
     }
+    .wishlist-item-img {
+        width: 85px;
+        height: 85px;
+        border-radius: 4px;
+    }
     .name {
-        padding: 20px;
+        padding: 10px;
+    }
+    .priceRow {
+        width: 20%;
     }
     .priceClass {
-        flex-direction: row;
-        gap: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
     }
-    .brandClass, .wishListBtns {
-        padding-left: 75px;
+    .dummyprices {
+        text-decoration: line-through;
+        color: red;
+    }
+    .brandClass {
+        width: 25%;
+        /* padding-left: 75px; */
+        text-align: center;
+       
+    }
+    .addButtonClass {
+        width: 25%;
+    }
+    .wishListBtns {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        padding: 20px;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .date {
+        margin-bottom: 0px;
+        text-align: center;
+    }
+    .addCart {
+        width: 120px;
+        height: 40px;
+        background-color: rgb(252, 143, 0);
+        border-radius: 10px;
+        color: white;
+        font-size: 16px;
+        padding: 10px;
+        margin-top: 10px;
+        cursor: pointer;
+        border: none;
+    }
+    .addCart:hover {
+        background-color: rgb(252, 143, 0);
+        border: none;
+        color: white;
+    }
+    .removeBtnClass{
+        width: 10%;
+        padding-left: 25px;
+        margin-top: 30px;
+     
+    }
+    .dleteIcon{
+        border: none;
+        color: red;
+        font-size: 30px;
+        padding-top:25px;
+    }
+    .remove-btn {
+       
+        border: none;  
+        /* font-size: 35px; */
+        background-color: transparent;  
+    }  
+}
+/* Medium devices (desktops, 992px and down) */
+ @media (max-width: 992px) {
+ 
+    .wishlist-container {
+        margin: 20px auto;
+        padding: 40px;
+        width: 90%;
+    }
+    .containers {
+        margin-top: -20px;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .heart {
+        font-size: 80px;
+    }
+    /* Add necessary CSS styles for the table */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    #back-btn {
+        padding: 10px 20px;
+        background-color: #181818;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    .wishlist-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .tr {
+        border: none;
+       
+    }
+    th, td {
+        border-bottom: 1px solid #ccc;
+        height: 80px;
+    }
+    .td {
+        height: 120px;
+    }
+    .nameImgClass {
+        width: 20%;
+    }
+    .imgAndNameContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 10px;
+    }
+    .imgContainer {
+        width: 95px;
+        height: 95px;
+    }
+    .wishlist-item-img {
+        width: 85px;
+        height: 85px;
+        border-radius: 4px;
+    }
+    .name {
+        padding: 10px;
+    }
+    .priceRow {
+        width: 20%;
+    }
+    .priceClass {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .dummyprices {
+        text-decoration: line-through;
+        color: red;
+    }
+    .brandClass {
+        width: 25%;
+        /* padding-left: 75px; */
+        text-align: center;
+       
+    }
+    .addButtonClass {
+        width: 25%;
+    }
+    .wishListBtns {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        padding: 20px;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .date {
+        margin-bottom: 0px;
+    }
+    .addCart {
+        width: 120px;
+        height: 40px;
+        background-color: rgb(252, 143, 0);
+        border-radius: 10px;
+        color: white;
+        font-size: 16px;
+        padding: 10px;
+        margin-top: 10px;
+        cursor: pointer;
+        border: none;
+    }
+    .addCart:hover {
+        background-color: rgb(252, 143, 0);
+        border: none;
+        color: white;
+    }
+    .removeBtnClass{
+        width: 10%;
+        padding-left: 25px;
+        margin-top: 30px;
+     
+    }
+    .dleteIcon{
+        border: none;
+        color: red;
+        font-size: 30px;
+        padding-top:25px;
+    }
+    .remove-btn {
+       
+        border: none;  
+        /* font-size: 35px; */
+        background-color: transparent;  
+    }
+   
+   
+}
+/* Small devices (tablets, 768px and down) */
+ @media (max-width: 768px) {
+    .headClass{
+        display:none;
+    }
+    .wishlist-container {
+        margin: 10px auto;
+        /* padding: 40px; */
+        width: 100%;
+        margin-bottom:auto;
+        margin-right: auto;
+    }
+    .containers {
+        margin-top: -20px;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .heart {
+        font-size: 80px;
+    }
+    /* Add necessary CSS styles for the table */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+       
+    }
+    #back-btn {
+        padding: 10px 20px;
+        background-color: #181818;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    .wishlist-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+ 
+    tr {
+        border: none;
+        display: flex;
+        flex-direction: column;
+        height:100%;
+        background-color:#fff !important;
+        width:100%;
+        margin:100px !;
+        margin-bottom: 27px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 4px 4px 5px 0px rgba(143, 141, 141, 0.75);
+    }
+    th, td {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        border: none;
+         
+    }
+    .td {
+        height: 120px;
+        border: none;
+    }
+    .nameImgClass {
+        width: 100%;
+        height:220px;
+        text-align: center;
+    }
+    .imgAndNameContainer {
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        /* padding-left: 10px; */
+        text-align: center;
+    }
+    .imgContainer {
+        width: 180px;
+        height: 180px;
+    }
+    .wishlist-item-img {
+        width: 240px;
+        height: 160px;
+        border-radius: 8px;
+        box-shadow:0px,0px,20px,rgb(0,0,0,0.25);
+    }
+    .name {
+        padding: 20px;
+        font-size: 28px;
+    }
+    .priceRow {
+        width: 100%;
+        height:50px;
+        text-align: center;
+       
+    }
+    .priceClass {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+   
+    }
+    .dummyprices {
+        text-decoration: line-through;
+        color: red;
+        font-size: 23px;
+    }
+    .mainprice{
+        font-size: 23px;
+    }
+    .brandClass {
+        width: 100%;
+        /* padding-left: 15px; */
+        font-size: 23px;
+        height:30px;
+        text-align: center;
+       
+    }
+    .addButtonClass {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        height:60px;
+ 
+       
+    }
+    .wishListBtns {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        /* padding: 20px; */
+        justify-content: space-evenly;
+        align-items: center;
+        padding-left: 50px;
+    }
+    .date {
+        margin-bottom: 0px;
+        text-align: center;
+        font-size: 18px;
     }
     .addCart {
         width: 240px;
+        height: 40px;
+        background-color: rgb(252, 143, 0);
+        border-radius: 15px;
+        color: white;
+        font-size: 20px;
+        padding: 10px;
+        margin-top: 10px;
+        cursor: pointer;
+        border: none;
+        /* padding-left: 30px; */
+    }
+    .addCart:hover {
+        background-color: rgb(252, 143, 0);
+        border: none;
+        color: white;
+    }
+    .removeBtnClass{
+        width: 100%;
+        height:auto;
+     
     }
     .remove-btn {
-        padding-left: 50px;
-    }
-} 
-/* Large devices (large desktops, 1200px and down) */
-@media (max-width: 1200px) {
-    .heart {
-        font-size: 70px;
-    }
-    #back-btn {
-        font-size: 16px;
-        padding: 10px 20px;
-    }
-    .nameImgClass, .priceRow, .brandClass, .addButtonClass, .remove-btn {
-        width: 100%;
-        display: block;
-        text-align: center;
-    }
-    .imgAndNameContainer {
-        flex-direction: column;
+         border: none;  
+         background-color: transparent;  
+         /* margin-top:-37px; */
         align-items: center;
-        padding-left: 0;
-    }
-    .wishlist-item-img {
-        width: 90px;
-        height: 90px;
-    }
-    .name {
-        padding: 15px 0;
-    }
-    .priceClass {
-        flex-direction: column;
-        gap: 5px;
-    }
-    .brandClass, .wishListBtns {
-        padding-left: 0;
-    }
-    .addCart {
-        width: 100%;
-    }
-    .remove-btn {
-        padding-left: 0;
-    }
-} 
-/* Medium devices (desktops, 992px and down) */
- @media (max-width: 992px) {
-    .heart {
-        font-size: 60px;
-    }
-    #back-btn {
-        font-size: 16px;
-        padding: 10px 20px;
-    }
-    .nameImgClass, .priceRow, .brandClass, .addButtonClass, .remove-btn {
-        width: 100%;
-        display: block;
         text-align: center;
+ 
+       
     }
-    .imgAndNameContainer {
-        flex-direction: column;
-        align-items: center;
-        padding-left: 0;
+    .dleteIcon{
+        border: none;
+        color: red;
+        font-size: 30px;
+       
+   
     }
-    .wishlist-item-img {
-        width: 90px;
-        height: 90px;
-    }
-    .name {
-        padding: 15px 0;
-    }
-    .priceClass {
-        flex-direction: column;
-        gap: 5px;
-    }
-    .brandClass, .wishListBtns {
-        padding-left: 0;
-    }
-    .addCart {
-        width: 100%;
-    }
-    .remove-btn {
-        padding-left: 0;
-    }
-} 
-/* Small devices (tablets, 768px and down) */
- @media (max-width: 768px) {
-    .heart {
-        font-size: 50px;
-    }
-    #back-btn {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-    .nameImgClass, .priceRow, .brandClass, .addButtonClass, .remove-btn {
-        width: 100%;
-        display: block;
-        text-align: center;
-    }
-    .imgAndNameContainer {
-        flex-direction: column;
-        align-items: center;
-        padding-left: 0;
-    }
-    .wishlist-item-img {
-        width: 80px;
-        height: 80px;
-    }
-    .name {
-        padding: 10px 0;
-    }
-    .priceClass {
-        flex-direction: column;
-        gap: 5px;
-    }
-    .brandClass, .wishListBtns {
-        padding-left: 0;
-    }
-    .addCart {
-        width: 100%;
-    }
-    .remove-btn {
-        padding-left: 0;
-    }
-} 
+}
 /* Extra small devices (phones, 576px and down) */
  @media (max-width: 576px) {
+    .headClass{
+        display:none;
+    }
+    .wishlist-container {
+        margin: 10px auto;
+        /* padding: 40px; */
+        width: 100%;
+        margin-bottom:auto;
+        margin-right: auto;
+    }
+    .containers {
+        margin-top: -20px;
+        text-align: center;
+        margin-bottom: 50px;
+    }
     .heart {
-        font-size: 40px;
+        font-size: 80px;
+    }
+    /* Add necessary CSS styles for the table */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+       
     }
     #back-btn {
-        font-size: 14px;
-        padding: 8px 16px;
+        padding: 10px 20px;
+        background-color: #181818;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 20px;
     }
-    .nameImgClass, .priceRow, .brandClass, .addButtonClass, .remove-btn {
+    .wishlist-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+ 
+   
+    tr {
+        border: none;
+        display: flex;
+        flex-direction: column;
+        height:100%;
+        background-color:#fff !important;
+        width:100%;
+        margin:30px !;
+        margin-bottom: 27px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 4px 4px 5px 0px rgba(143, 141, 141, 0.75);
+           
+    }
+    th, td {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        border: none;
+    }
+    .td {
+        height: 120px;
+        border: none;
+   
+    }
+    .nameImgClass {
         width: 100%;
-        display: block;
+        height:220px;
         text-align: center;
     }
     .imgAndNameContainer {
-        flex-direction: column;
+        display: flex;
+        flex-direction:column;
         align-items: center;
-        padding-left: 0;
+        /* padding-left: 10px; */
+        text-align: center;
+    }
+    .imgContainer {
+        width: 180px;
+        height: 180px;
     }
     .wishlist-item-img {
-        width: 80px;
-        height: 80px;
+        width: 240px;
+        height: 160px;
+        border-radius: 8px;
+        box-shadow:0px,0px,20px,rgb(0,0,0,0.25);
     }
     .name {
-        padding: 10px 0;
+        padding: 20px;
+        font-size: 28px;
+    }
+    .priceRow {
+        width: 100%;
+        height:50px;
+        text-align: center;
+       
     }
     .priceClass {
+        display: flex;
         flex-direction: column;
-        gap: 5px;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+   
     }
-    .brandClass, .wishListBtns {
-        padding-left: 0;
+    .dummyprices {
+        text-decoration: line-through;
+        color: red;
+        font-size: 23px;
+    }
+    .mainprice{
+        font-size: 23px;
+    }
+    .brandClass {
+        width: 100%;
+        /* padding-left: 15px; */
+        font-size: 23px;
+        height:30px;
+        text-align: center;
+       
+    }
+    .addButtonClass {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        height:60px;
+ 
+       
+    }
+    .wishListBtns {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        /* padding: 20px; */
+        justify-content: space-evenly;
+        align-items: center;
+        padding-left: 50px;
+    }
+    .date {
+        margin-bottom: 0px;
+        text-align: center;
+        font-size: 18px;
     }
     .addCart {
         width: 100%;
+        height: 40px;
+        background-color: rgb(252, 143, 0);
+        border-radius: 15px;
+        color: white;
+        font-size: 20px;
+        padding: 10px;
+        margin-top: 10px;
+        cursor: pointer;
+        border: none;
+        /* padding-left: 30px; */
+    }
+    .addCart:hover {
+        background-color: rgb(252, 143, 0);
+        border: none;
+        color: white;
+    }
+    .removeBtnClass{
+        width: 100%;
+        height:auto;
+     
     }
     .remove-btn {
-        padding-left: 0;
+         border: none;  
+         background-color: transparent;  
+         /* margin-top:-37px; */
+        align-items: center;
+        text-align: center;
+ 
+       
     }
-} 
-
-
+    .dleteIcon{
+        border: none;
+        color: red;
+        font-size: 30px;
+       
+   
+    }
+   
+}
