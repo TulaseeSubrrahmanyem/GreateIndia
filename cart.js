@@ -58,6 +58,7 @@ function loadCartItems() {
 
         return `
             <div class='item-details'>
+                
                 <div class="item-image" data-product='${productDataString}' onclick="viewItemDetails(this)">
                     <img src="${item.image}" alt="${item.name}" class="item-img">
                 </div>
@@ -104,7 +105,10 @@ function loadCartItems() {
     orderDetailsContainer.innerHTML = `
         <div class="cartShowContainer">
             <div>
+            
                 <div class='item-Detail-Container'>
+                 <h1>Shopping Cart</h1>
+                 
                     ${cartItemsHTML.join('')}
                 </div>
                 <div class="btnContiner">

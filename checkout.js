@@ -1,19 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // function isLoggedIn() {
-    //     return JSON.parse(localStorage.getItem('userDetails')) === true;
-    // }
-
-    // // Redirect to login page if not logged in
-    // if (!isLoggedIn()) {
-    //     window.location.href = "index.html";
-    //     return;
-    // }
-
-    // Step 1: Initial Checkout Page
-    // const step1 = document.getElementById("step1");
-    // const continueStep2 = document.getElementById("continueStep2");
-    // const cancelCheckout = document.getElementById("cancelCheckout");
 
     // Step 2: User Information Page
     const step2 = document.getElementById("step2");
@@ -22,112 +8,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Step 3: Review Order Page
     const step3 = document.getElementById("step3");
-    const finishCheckout = document.getElementById("finishCheckout");
-    const cancelStep3 = document.getElementById("cancelStep3");
+    
 
-    // Retrieve the checkout item from local storage
-    // const buyingItem = JSON.parse(localStorage.getItem('buyingItem'));
     const buyingItem = JSON.parse(localStorage.getItem('buyingItem'));
-    // const cartItems = JSON.parse(localStorage.getItem('checkoutItems')) || [];
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
     const paymentMethodRadios = document.querySelectorAll('input[type="radio"][name="paymentMethod"]');
     const cardDetails = document.getElementById("cardDetails");
     const upiDetails = document.getElementById("upiDetails");
-    let checkoutItems
+    let checkoutItems = [];
 
     let totalPrice = 0;
     let totalDummyPrice = 0;
     let totalQuantity = 0;
-    let totaldummyoriginal=0
-    // function displayCheckoutItem(item) {
-    //     if (!item.count) {
-    //         item.count = 1;
-    //     }
-    //     let itemPrice = parseFloat(item.mainprice);
-    //     console.log(typeof(itemPrice));
-    //     if (isNaN(item.mainprice)) {
-    //         // Replace all commas globally before parsing
-    //         itemPrice = parseFloat(item.mainprice.replace(/,/g, ''));
-    //     }
-
-    //     const itemTotalPrice = itemPrice * item.count;
-       
-    //     // const itemTotalPrice = itemPrice * item.count;
-    //     const checkoutItemContainer = document.getElementById('checkoutItem');
-    //     const checkoutItem = document.createElement('div');
-    //     checkoutItem.classList.add('checkout-item');
-    //     checkoutItem.innerHTML = `
-    //         <div class='item-details'>
-    //             <div>
-    //                 <img src="${item.image}" alt="${item.name}" class="item-img">
-    //             </div>
-    //             <div class='item-info'>
-    //                 <h3>${item.name}</h3>
-    //                 <div class="overall">
-    //                 <p class="commonkey">Brand: </p>
-    //                 <p class="brand commondata">${item.brand}</p>
-    //                 </div>
-    //                 <div  class="overall">
-    //                 <p class="commonkey">Price: </p>
-    //                 <p class="price commondata">&#8377; ${item.mainprice}</p>
-    //                 </div>
-    //                 <div class="overall">
-    //                 <p class="commonkey">Discount: </p>
-    //                 <p class="discount commondata">${item.discount}</p>
-    //                 </div>
-    //                 ${item && item.selectedSize ?
-    //                     `<div class='overall'>
-    //                         <p class="commonkey">Size: </p> 
-    //                         <p class="commondata">${item.selectedSize}</p>
-    //                     </div>` : ''}
-
-    //                 <div  class="overall">
-    //                 <p class="commonkey">Rating: </p>
-    //                 <p class="rating commondata">${item.ratingstars}</p>
-    //                 </div>
-    //                 <div  class="overall">
-    //                 <p class="commonkey">Quantity: </p>
-    //                 <p class=" commondata" > ${item.count && item.count > 0 ? item.count : 1}</p>
-    //                 </div>
-    //                 <div  class="overall">
-    //                 <p class="totalkey">Total: </p>
-    //                 <p class="total">&#8377; ${itemTotalPrice.toFixed(2)}</p>
-    //                 </div>  
-    //             </div>
-    //         </div>
-    //     `;
-    //     checkoutItemContainer.appendChild(checkoutItem);
-    // }
-   
-    // const checkoutItemContainer = document.getElementById('checkoutItem');
-    
-    // // Clear any existing content in the container
-    // checkoutItemContainer.innerHTML = '';
-    // // Check if there is a checkout item
-    // if (buyingItem) {
-    //     displayCheckoutItem(buyingItem);
-    // } else if (cartItems.length > 0) {
-    //     cartItems.forEach(item => {
-    //         displayCheckoutItem(item);
-    //     });
-    // } else {
-    //     checkoutItemContainer.innerHTML = "<p>No items to checkout.</p>";
-    // }
-
-    // Event listener for continuing to Step 2
-    // continueStep2.addEventListener("click", function() {
-    //     step1.style.display = "none";
-    //     step2.style.display = "block";
-    //     step3.style.display = "none";
-    // });
+    let totaldummyoriginal = 0;
+  
     step2.style.display = "block";
-    // Event listener for canceling checkout
-    // cancelCheckout.addEventListener("click", function() {
-    //     window.location.href = "homepage.html";
-    //     localStorage.removeItem('buyingItem');
-    // });
-
-   // Event listener for continuing to Step 3
+   
      // Event listener for continuing to Step 3
     document.getElementById("continueStep3").addEventListener("click", function(event) {
         event.preventDefault(); // Prevent form submission
@@ -241,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Display order details in Step 3
         const orderDetailsContainer = document.getElementById("orderDetails");
-         checkoutItems = [];
+      
 
         if(buyingItem && cartItems.length > 0){
             checkoutItems.push(buyingItem);
@@ -353,8 +249,16 @@ document.addEventListener("DOMContentLoaded", function() {
         // Generate the HTML for the order details section
         orderDetailsContainer.innerHTML = `
            <div class='reviewDetail'>
-            <div id="orderInfo">           
+           <div>
+            <div id="orderInfo"> 
+             <h1>Order Review</h1>          
                 ${orderItemsHTML}
+            </div> 
+             <div class="step3-buttons3">
+                 <button id="cancelStep3" onclick="window.history.back();">Cancel</button>
+                <button id="finishCheckout">Finish</button> 
+            </div>
+          
             </div>
             <div class='payInfo'>
                 <div class="payment-info">
@@ -426,24 +330,18 @@ document.addEventListener("DOMContentLoaded", function() {
         // Show Step 3
         step2.style.display = "none";
         step3.style.display = "block";
-    });
-    
 
-    // Event listener for canceling Step 2
-    cancelStep2.addEventListener("click", function() {
-        // step1.style.display = "block";
-        step2.style.display = "none";
-        step3.style.display = "none";
-    });
+           // Event listener for canceling Step 3
+           const cancelStep3 = document.getElementById("cancelStep3");
+           cancelStep3.addEventListener("click", function() {
+               step3.style.display = "none";
+               step2.style.display = "block";
+           });
 
-    // Event listener for canceling Step 3
-    cancelStep3.addEventListener("click", function() {
-        step2.style.display = "block";
-        step3.style.display = "none";
-    });
 
+           
     // Event listener for finishing checkout
-
+    const finishCheckout = document.getElementById("finishCheckout");
     finishCheckout.addEventListener("click", function(event) {
         event.preventDefault();
         if (this.hasAttribute('disabled')) {
@@ -471,18 +369,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const formattedDate = currentDate.toLocaleDateString();
         const formattedTime = currentDate.toLocaleTimeString();
     
-        // // Initialize an array to store order items
-        // let items = [];
-    
-        // // If there's a buying item, add it to the items array
-        // if (buyingItem) {
-        //     items.push(buyingItem);
-        // }
-    
-        // // If there are items in the cart, add them to the items array
-        // if (cartItems.length > 0) {
-        //     items = items.concat(cartItems);
-        // }
+     
       
        // Function to generate a timestamp-based order ID
        function generateOrderID() {
@@ -546,6 +433,36 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = "thanksPage.html";
         finishCheckout.hasEventListener = true;
     });
+    });
+    
+
+    // Event listener for canceling Step 2
+    cancelStep2.addEventListener("click", function() {
+        // step1.style.display = "block";
+        step2.style.display = "none";
+        step3.style.display = "none";
+    });
+
+     // Event listener for payment method radios
+     paymentMethodRadios.forEach(radio => {
+        radio.addEventListener("click", function() {
+            // Show/hide payment details based on the selected method
+            if (radio.value === "card") {
+                cardDetails.style.display = "block";
+                upiDetails.style.display = "none";
+            } else if (radio.value === "upi") {
+                cardDetails.style.display = "none";
+                upiDetails.style.display = "block";
+            } else {
+                cardDetails.style.display = "none";
+                upiDetails.style.display = "none";
+            }
+        });
+    });
+
+   
+   
+
     
     
 
@@ -569,22 +486,7 @@ document.addEventListener("DOMContentLoaded", function() {
         inputElements.forEach(inputElement => inputElement.classList.remove("input-error"));
     }
 
-    // Event listener for payment method radios
-    paymentMethodRadios.forEach(radio => {
-        radio.addEventListener("click", function() {
-            // Show/hide payment details based on the selected method
-            if (radio.value === "card") {
-                cardDetails.style.display = "block";
-                upiDetails.style.display = "none";
-            } else if (radio.value === "upi") {
-                cardDetails.style.display = "none";
-                upiDetails.style.display = "block";
-            } else {
-                cardDetails.style.display = "none";
-                upiDetails.style.display = "none";
-            }
-        });
-    });
+   
 
     window.addEventListener('beforeunload', function(event) {
         // Retrieve the buyingItem from localStorage
@@ -612,20 +514,5 @@ document.addEventListener("DOMContentLoaded", function() {
         event.returnValue = '';  // Some browsers require this
     });    
 
-    // const checkoutItemContainer = document.getElementById('checkoutItem');
-
-// // Function to update grid layout based on conditions
-// function updateGridTemplate() {
-//   if (cartItems.length === 1 || buyingItem) {
-//     // checkoutItemContainer.style.gridTemplateColumns = '1fr'; // Single column layout
-//     checkoutItemContainer.style.gridTemplateColumns = 'repeat(2, minmax(550px, 1fr))'
-//   } else {
-//     checkoutItemContainer.style.gridTemplateColumns = 'repeat(auto-fill, minmax(450px, 1fr))'; // Adjusted for smaller screens
-//   }
-// }
-
-// Call the function initially and on window resize
-// updateGridTemplate();
-// window.addEventListener('resize', updateGridTemplate);
 
 });

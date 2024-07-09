@@ -1040,11 +1040,18 @@ background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
     text-align: center;
     margin-top: 40px;
 }
+
+.footer-top{
+    background-color: #000;
+    padding: 15px;
+    margin-top: -18px;
+}
 .footer-top a{
     margin-bottom: 30px;
     text-decoration: none;
     color:#fff;
     padding-bottom: 40px;
+  
 }
 .footerContainer {
     max-width: 1170px;
