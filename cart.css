@@ -37,7 +37,6 @@
     padding: 30px;  
     border-radius: 5px;
     margin-bottom: 10px;
-    /* box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25); */
     border-bottom: 2px solid #ccc;
   }
 
@@ -295,7 +294,7 @@
         padding: 10px;  
         border-radius: 5px;
         margin-bottom: 10px;
-      
+        width: 100%;
        
       }
     
@@ -309,7 +308,7 @@
     .itemContent{
         width:100%;
         margin-left: 0px;
-        
+            
     }
     .btnHeading{
         display: flex;
@@ -320,6 +319,7 @@
         font-size: 20px;
         margin-top: 25px;
         margin-left: 10px;
+        margin-right: 10px;
     }
     .price, .size, .quantity, .discount {
         display: flex;
@@ -353,9 +353,9 @@
     .quantity-controls {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content:start;
         margin-left:5px ;  
-        margin-top: 15px;  
+        margin-top: 20px;  
     }
     
     .item-quantity {
@@ -514,6 +514,10 @@
         font-weight:550;
         margin-left:45px;
       }
+      .sizegap{
+        font-weight:550;
+        margin-left:45px;
+      }
     .discountcolor{
         /* float: right; */
         margin-left: 10px;
@@ -523,11 +527,15 @@
     .quantity-controls {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content:start;
         margin-left:5px ;  
-        margin-top: 15px;  
+        margin-top: 20px;  
     }
-    
+    .item-controls{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
     .item-quantity {
         margin: 6px;
         margin-left: 15px;
