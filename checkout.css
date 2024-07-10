@@ -282,12 +282,12 @@ hr{
   margin-bottom: 20px;
   display: flex;
   flex-direction: row;
- 
- 
-}
+ }
  
 #orderdetailsContainer{
   background-color: cadetblue;
+ 
+
 }
 .reviewDetail{
   /* margin-left: 0; */
@@ -297,15 +297,14 @@ hr{
   justify-content: space-between;
   margin-bottom: 40px;
   margin: 20px;
+
 }
 .order-item {
-  /* background-color:whitesmoke; */
-  background-color: whitesmoke;
-  box-shadow: 4px 4px 10px rgba(9, 9, 9, 0.1);
+  background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: row;
   justify-content:flex-end;
-  /* margin: 30px; */
+  border-bottom: 2px solid #ccc;
   width: 60vw;
   border-radius: 10px;
 }
@@ -324,22 +323,20 @@ hr{
   height: 200px;
  /* object-fit: cover;*/
   margin-right: 100px;
-  box-shadow: 4px 4px 10px rgba(233, 159, 159, 0.1);
+  /* box-shadow: 4px 4px 10px rgba(233, 159, 159, 0.1); */
 }
- /* .orderInfocontainer{
-  background-color: #ffff;
-  overflow-y: auto;
- } */
+
 .order-item .item-info {
   /* flex: 1; */
   font-size: 16px;
 }
 #orderInfo{
   width: 100%; 
-  /* height: 600px; */
-  overflow: auto;
+  overflow-y: auto;
+  /* height: 100%; */
+  max-height: 500px;
   background-color: #fff;
-
+ 
 }
 #orderInfo h1{
   font-size: 22px;
@@ -667,11 +664,12 @@ hr{
 .reviewDetail{
   /* margin-left: 0; */
   display: flex;
-  width: 100%;
+  width:100%;
  
   flex-direction: column;
   justify-content: start;
- margin: 20px;
+ margin: 0px;
+ padding: 20px;
 }
 .order-item {
   /* background-color:whitesmoke; */
@@ -752,13 +750,14 @@ hr{
     flex-direction:row;
   }
   .payInfo {
-    width: 100%; /* Adjust the max-width as per your design */
+    width: 90%; /* Adjust the max-width as per your design */
     border: 1px solid #ccc;
     padding: 10px;
- 
+    margin: 10px;
     margin-top: 20px;
     
  }
+ 
  .step3-buttons3{
     display: flex;
     flex-direction: row;
@@ -766,7 +765,8 @@ hr{
     background-color: #ffffff;
     width: 100%;
     padding-top: 20px; 
-    margin-left: -10px; 
+    margin-bottom: 30px;
+    /* margin-left: -10px;  */
     box-shadow: 0px -5px 20px 0px rgba(0, 0, 0, 0.25);
 }
  #cancelStep3,
@@ -796,6 +796,12 @@ hr{
   height: 40px;
   font-size: 18px;
   text-align: center;
+}
+.total{
+ 
+  width: 100%;
+  padding-left: 10px;
+  border-radius: 5px;
 }
 }
 
@@ -915,7 +921,7 @@ display: flex;
 flex-direction: column;
 justify-content:space-evenly;
 margin: 20px;
-width: 100%;
+width: 90%;
 border-radius: 10px;
 }
 .imagedetails{
@@ -926,7 +932,7 @@ width:90%;
 width: 100%;
 /* height: 200px; */
 /* object-fit: cover;*/
-margin-right: 100px;
+/* margin-right: 100px; */
 box-shadow: 4px 4px 10px rgba(233, 159, 159, 0.1);
 }
 .order-item .item-info {
@@ -936,7 +942,7 @@ font-size: 16px;
 #orderInfo{
 width:100%;
 margin-bottom: 30px;
-margin: -10px;
+margin: 0px ;
 
 }
 .item-info{
@@ -1020,5 +1026,11 @@ width: 50%;
   height: 40px;
   font-size: 18px;
   text-align: center;
+}
+.total{
+ 
+  width: 100%;
+  padding-left: 10px;
+  border-radius: 5px;
 }
 }

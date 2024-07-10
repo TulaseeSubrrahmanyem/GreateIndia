@@ -97,7 +97,10 @@
 } 
 .NoItems{
     text-align: center;
-  
+    height:70vh;
+    margin-top: 50px;
+    font-size: 22px;
+    padding-top: 50px;
 }
 .quantity-controls {
     display: flex;
@@ -423,6 +426,13 @@
         margin-bottom:30px;
         border: none;
         margin-top: 20px;
+    }
+    .NoItems{
+        text-align: center;
+        height:50vh;
+        margin-top: 70px;
+        font-size: 22px;
+        padding-top: 50px;
     }
 }
 

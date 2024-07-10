@@ -197,13 +197,14 @@ document.addEventListener("DOMContentLoaded", function() {
                           ${item.selectedSizes && item.selectedSizes.length > 0 && item.selectedSizes[0] !== '' ? ` <p class="keyorder"><strong>Size    :</strong> </p> <p class="dataorder"> ${item.selectedSizes.join(', ')}</p>` : ''}
                          </div>
                         <div class="overalls">
+                            <p class="keyorder"><strong>discount    :</strong> </p>
+                            <p class="dataorder" style="opacity: 0.7;">-&#8377;${itemTotalDummyPrice}</p>                            
+                        </div>
+                        <div class="overalls">
                         <p class="keyorder"><strong>Price    :</strong> </p>
                         <p class="dataorder">&#8377;${itemTotalPrice}</p>
                         </div>
-                         <div class="overalls">
-                        <p class="keyorder"><strong>discount    :</strong> </p>
-                        <p class="dataorder">&#8377;${itemTotalDummyPrice} ${item.discount}</p>
-                        </div>
+                      
                         <div class="overalls">
                         <p class="keyorder"><strong>Quantity :</strong> </p>
                         <p class="dataorder">${item.count}</p>
@@ -241,10 +242,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }, 0);
 
-        
-        // Add tax to the subtotal
-        // const tax = 35;
-        // const totalPrice = subtotal + tax;
         
         // Generate the HTML for the order details section
         orderDetailsContainer.innerHTML = `
