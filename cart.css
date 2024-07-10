@@ -67,7 +67,7 @@
     font-size: 22px;
     margin-top: 25px;
 }
-.price, .size, .quantity, .discount {
+.price, .size, .quantity, .discount  {
     display: flex;
     flex-direction: row;
     justify-content:start;
@@ -77,6 +77,16 @@
     font-size: 18px;
     margin-left: 40px;
     
+}
+.size{
+    display: flex;
+    flex-direction: row;
+    justify-content:start;
+    
+}
+.sizegap{
+    margin-left: 100px;  
+    font-weight: 500;
 }
 .discountgap{
      margin-left: 70px;  

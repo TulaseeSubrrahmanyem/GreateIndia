@@ -72,7 +72,12 @@ function loadCartItems() {
                         </div>
                     </div>
                     <div>
-                        ${item.selectedSizes && item.selectedSizes.length > 0 && item.selectedSizes[0] !== '' ? `<div class="size"><p>Size:</p><p> ${item.selectedSizes.join(', ')}</p></div>` : ''}
+                        ${item.selectedSizes && item.selectedSizes.length > 0 && item.selectedSizes[0] !== '' ? 
+                        `<div class="size">
+                          <p>Size:</p>
+                          <p class="sizegap"> ${item.selectedSizes.join(', ')}</p>
+                        </div>` : ''}
+
                         <div class="quantity">
                             <p>Quantity:</p>
                             <p class="discountgap"><span id="quantity${index}">${item.count}</span></p>

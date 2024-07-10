@@ -455,12 +455,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 upiDetails.style.display = "none";
             }
         });
-    });
-
-   
-   
-
-    
+    });  
     
 
     // Function to display error message for a specific input field
