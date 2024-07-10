@@ -162,18 +162,26 @@ hr{
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
-  max-width: 800px;
-   margin: auto;
+  width: 95%;
+  /* max-width: 800px; */
+   margin: 20px auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .user-info-and-payment {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.user-info-form, .payment-options-form {
+.user-info-form {
   margin-bottom: 20px;
+  width: 100%;
+}
+.payment-options-form {
+  margin-bottom: 20px;
+  width: 60%;
+  margin-left: 30px;
 }
 
 #step2 h2 {
@@ -183,19 +191,23 @@ hr{
 }
 
 .form-group-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+ 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
+  margin: 20px;
 }
 
 .form-group label {
   margin-bottom: 5px;
   font-weight: bold;
+  width: 100%;
 }
 
 .form-group input {
@@ -205,19 +217,24 @@ hr{
   border-radius: 4px;
   outline: none;
   transition: border-color 0.3s;
-  width: 100%;
+  width: 350px;
+ 
 }
 
 .form-group input:focus {
   border-color: #007bff;
 }
 
-.payment-options-form label {
+.radioBtnContiner label {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  font-size: 20px;
   cursor: pointer;
 }
-
+.radioBtnContiner{
+  margin-top: 60px;
+  margin-left: 20px;
+}
 .payment-options-form input[type="radio"] {
   margin-right: 10px;
 }
@@ -225,6 +242,7 @@ hr{
 #cardDetails .form-group,
 #upiDetails .form-group {
   margin-bottom: 10px;
+  width: 750px;
 }
 
 .button-group {
@@ -243,12 +261,6 @@ hr{
   transition: background-color 0.3s;
 }
 
-/* .button-group button:hover {
-  background-color: #0056b3;
-} */
-
-
-
 #cancelStep2 {
   background-color: black;
 }
@@ -265,16 +277,6 @@ hr{
   width: 100%;
  
 }
-/* #orderDetailsContainer {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit,  1fr);
-  gap: 10px;
-  padding: 10px;
-  border-radius: 10px;
- 
-} */
-
  
 #orderDetails {
   width: 100%;
@@ -375,7 +377,7 @@ hr{
   border-radius: 10px;
   box-shadow: 4px 4px 10px rgba(123, 61, 61, 0.1);
   width: 35%;
-  /* max-width: 650px;  */
+  
   border: 1px solid #ccc;
   padding: 20px;
  height:fit-content;
@@ -523,7 +525,6 @@ justify-content: space-between;
  
 .price-total {
   margin-top: 0px; 
-  /* padding-left: 0px; Adjust spacing as needed */
   width: 100%;
   margin-left: 10px;
 }
@@ -612,7 +613,7 @@ hr{
     width: 70%;
     display: flex;
     flex-direction: row;
-    margin: 10px; /* Add margin between each paragraph */
+    margin: 10px; 
 }
   .item-info p span {
     padding-left: 0px !important;
@@ -623,8 +624,8 @@ hr{
   padding: 30px;
   background-color: #f9f9f9;
   border-radius: 8px;
-  width:95%;
-  margin:20px auto ;
+  width:100% !important;
+  margin:20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -632,10 +633,13 @@ hr{
   display: flex;
   flex-direction: column;
 }
+
 .form-group-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  
 }
 
 .form-group {
@@ -657,9 +661,22 @@ hr{
   outline: none;
   transition: border-color 0.3s;
 }
-
+#cardDetails .form-group,
+#upiDetails .form-group {
+  margin-bottom: 10px;
+  width: 550px;
+}
 .form-group input:focus {
   border-color: #007bff;
+}
+.payment-options-form {
+  margin-bottom: 20px;
+  width: 100%;
+  margin-left: 0px;
+}
+.radioBtnContiner{
+  margin-top: 20px;
+  margin-left: 20px;
 }
 .reviewDetail{
   /* margin-left: 0; */
@@ -875,12 +892,19 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 display: flex;
 flex-direction: column;
 }
-.form-group-container {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 20px;
-}
 
+.form-group-container {
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  
+}
+#cardDetails .form-group,
+#upiDetails .form-group {
+  margin-bottom: 10px;
+  width: 550px;
+}
 .form-group {
 display: flex;
 flex-direction: column;
