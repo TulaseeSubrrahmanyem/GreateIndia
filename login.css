@@ -1,5 +1,5 @@
 body {
-  /* background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg') bottom center no-repeat; */
+ 
     background-size: 300%;
   }
   * {
@@ -15,8 +15,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  /* background-color: #ebb550; */
-/* background-image: url(https://img.freepik.com/free-photo/green-background_53876-14521.jpg?w=996&t=st=1719394572~exp=1719395172~hmac=8dad6c3d08ef1ad6b37e970527cdc8d6da082cb3996c478b87b9471d933456c5); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -32,30 +30,11 @@ body {
   
 }
  
-/* .form-container {
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-    padding-bottom:100px ;
-  padding-right: 30px;
-}*/
+
  
 .form-wrapper {
   width: 30%;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 @import url("https://fonts.googleapis.com/css?family=Raleway:400");
 
@@ -70,19 +49,7 @@ body {
 }
 
 
-/* body {
-	font-family: Raleway, sans-serif;
-	text-align: center;
-	margin: 0;
-	padding: 1rem;
-	background-color: rgba(10, 12, 18, 1);
-	color: white;
-	min-height: 100vh;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-} */
+
 
 
 
@@ -102,7 +69,8 @@ body {
       rgb(159, 159, 159) 0.15turn,
       rgba(168, 239, 255, 0.1) 0.25turn
     )
-    30;animation: borderRotate 2.5s linear infinite forwards;
+    30;
+    animation: borderRotate 2.5s linear infinite forwards;
 }
 
 
@@ -111,30 +79,6 @@ body {
 		--angle: 420deg;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  
 .form {  
    background-image: url('_1258-30484.jpg?w=740&t=st=1719394800~exp=1719395400~hmac=c9f21eeb2143e59770dab6d4c6a53449348165fee0299abd543b0ae35b2f94f6');  
@@ -222,7 +166,8 @@ section .trees {
   pointer-events: none;
 }
  
-section .girl { width: 630px;
+section .girl { 
+  width: 630px;
   height: 250px;
   position: absolute;
   scale: 0.65;
@@ -237,9 +182,9 @@ section .girl { width: 630px;
   50% {
     transform: translateX(calc(-100% - 100vw));
   }
-  /* 50.01% {
+  50.01% {
     transform: translateX(calc(-100% - 100vw)) rotateY(180deg);
-  } */
+  }
   100% {
     transform: translateX(calc(100% + 100vw)) rotateY(180deg);
   }
@@ -249,9 +194,7 @@ section .girl { width: 630px;
   position: relative;
   padding: 60px;
   background: rgba(129, 4, 4, 0.8);
-  /* backdrop-filter: blur(15px); */
-  border: 1px solid #fff;
- 
+  border: 1px solid #fff; 
   border-radius: 20px;
   width: 500px;
   display: flex;
@@ -321,8 +264,7 @@ section .girl { width: 630px;
  
 .login .group a:nth-child(2) {
   text-decoration: underline;
-} */
- 
+} 
 .leaves {
   position: absolute;
   width: 100%;
@@ -337,7 +279,8 @@ section .girl { width: 630px;
  
 .leaves .set {
   position: absolute;
-  width: 50%;
+  /* width: 50%; */
+  width: 100%;
   height: 100%;
   top: 0;
   left: 0;
@@ -350,46 +293,54 @@ section .girl { width: 630px;
 }
  
 .leaves .set div:nth-child(1) {
- left: 3%;
+ /* left: 3%; */
+ left: 20%;
   animation: animate 22s linear infinite;
 }
  
 .leaves .set div:nth-child(2) {
-  left:139%;
+  /* left:139%; */
+  left: 30%;
   animation: animate 14s linear infinite;
 }
  
 .leaves .set div:nth-child(3) {
-  left: 139%;
+  /* left: 139%; */
+  left: 70%;
   animation: animate 18s linear infinite;
 }
  
 .leaves .set div:nth-child(4) {
-  left: 139%;
+  /* left: 9%; */
+  left: 5%;
   animation: animate 23s linear infinite;
 }  
  
 .leaves .set div:nth-child(5) {
-  right: 110%;
+  /* right: 110%; */
+  left: 85%;
   animation: animate 22s linear infinite;}
  
  
 .leaves .set div:nth-child(6) {
-  right: 90%;
+  /* right: 90%; */
+  left: 90%;
   animation: animate 35s linear infinite;
 }
  
 .leaves .set div:nth-child(7) {
-  left:2%;
+  /* left:2%; */
+  left: 15%;
   animation: animate 10s linear infinite;
 }
  
  .leaves .set div:nth-child(8) {
-  right: 90%;
+  /* right: 90%; */
+  left: 80%;
   animation: animate 25s linear infinite;
 } 
  
-@keyframes animate {
+/* @keyframes animate {
   0% {
     opacity: 0;
     top: -10%;
@@ -415,15 +366,40 @@ section .girl { width: 630px;
     top: 110%;
     transform: translateX(20px) rotate(360deg);
   }
+} */
+ 
+@keyframes animate {
+  0% {
+    opacity: 0;
+    top: -10%;
+    transform: translateX(20px) rotate(0deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(-20px) rotate(45deg);
+  }
+  40% {
+    transform: translateX(-20px) rotate(90deg);
+  }
+  60% {
+    transform: translateX(20px) rotate(180deg);
+  }
+  80% {
+    transform: translateX(-20px) rotate(45deg);
+  }
+  100% {
+    top: 110%;
+    transform: translateX(20px) rotate(225deg);
+  }
 }
- 
- 
 
  
 /* Container for sections */
 .section {
-  padding-top: 60px; /* Adjust top padding as needed */
-  padding-bottom: 60px; /* Adjust bottom padding as needed */
+  padding-top: 60px; 
+  padding-bottom: 60px; 
 }
  
 /* Centering content within container */
@@ -582,9 +558,6 @@ section .girl { width: 630px;
 .card-3d-wrap {
   width: 440px;
   max-width: 100%;
-  /* height: 480px;
-  perspective: 800px; */
-  /* margin-top: 60px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -736,12 +709,5 @@ p {
   .btntoggle {
     font-weight: 300;
   }
-
-
-
-
-
- 
-
   
 }
