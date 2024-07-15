@@ -121,7 +121,7 @@ function displayOrderDetails() {
     // Add buttons based on order status
     if (order.status === 'Confirmed') {
         orderDiv.innerHTML += `
-            <button id="refundButton">Refund Initiate</button>
+            <button id="refundButton">Refund Initiated</button>
             <button id="cancelButton">Cancel Order</button>
         `;
     } else if (order.status === 'Delivered') {
