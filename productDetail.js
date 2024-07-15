@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // const isInCart = cart.some(item => item.id === selectedItem.id);
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartItem = cart.find(item => item.id === selectedItem.id);
-    const isInCart = !!cartItem;
+    const isInCart = cartItem;
     const selectedSizeInCart = cartItem ? cartItem.selectedSizes[0]: null;
 
     // Check if selectedItem is not empty and has the required properties
