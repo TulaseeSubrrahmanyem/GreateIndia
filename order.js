@@ -180,10 +180,6 @@ function cancelOrderItem(orderId, itemId) {
 
 
 
-
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
     displayOrders();
     document.getElementById('orderFilter').addEventListener('change', displayOrders);
