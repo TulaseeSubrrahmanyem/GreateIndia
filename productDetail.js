@@ -9,8 +9,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const isFavorite = favorites.some(item => item.id === selectedItem.id);
 
     // Check if product is in cart
+    // const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    // const isInCart = cart.some(item => item.id === selectedItem.id);
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const isInCart = cart.some(item => item.id === selectedItem.id);
+    const cartItem = cart.find(item => item.id === selectedItem.id);
+    const isInCart = !!cartItem;
+    const selectedSizeInCart = cartItem ? cartItem.selectedSizes[0]: null;
 
     // Check if selectedItem is not empty and has the required properties
     if (selectedItem && selectedItem.name && selectedItem.image && selectedItem.mainprice && selectedItem.brand && selectedItem.mainCategoryName) {
@@ -39,14 +43,14 @@ document.addEventListener("DOMContentLoaded", function() {
                     ${selectedItem.size && selectedItem.size.length > 0 ? `<p>Select Sizes:</p>` : ''}
                     ${selectedItem.size ? selectedItem.size.map((size, index) => `
                         <label>
-                            <input type="radio" name="size" value="${size}" ${index === 0 ? 'checked' : ''}>
+                            <input type="radio" name="size" value="${size}" ${selectedSizeInCart === size || (!isInCart && index === 0) ? 'checked' : ''}>
                             <span class="custom-radio" data-size="${size}">${size}</span>
                         </label>
                     `).join('') : ''}
                     ${selectedItem['size(UK)'] && selectedItem['size(UK)'].length > 0 ? `<p>Select Sizes(UK):</p>` : ''}
                     ${selectedItem['size(UK)'] ? selectedItem['size(UK)'].map((size, index) => `
                         <label class="checkUKSize">
-                            <input type="radio" name="size" value="${size}" ${index === 0 ? 'checked' : ''}>
+                            <input type="radio" name="size" value="${size}" ${selectedSizeInCart === size || (!isInCart && index === 0) ? 'checked' : ''}>
                             <span class="custom-radio" data-size="${size}">${size}</span>
                         </label>
                     `).join('') : ''}

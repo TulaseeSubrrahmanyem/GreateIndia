@@ -2,9 +2,7 @@ body{
   /* background-color: white !important;  */
   background-color: lavender !important;
 }
-/* #productDetailContainer {
-   background-color: white; 
-} */
+
 
 #selectedItemDetails {
 
@@ -14,9 +12,7 @@ body{
 #productdetail {
    background-color: rgb(230, 230, 230); 
  
-  /* padding-top: 20px;
-  padding: 10px; */
-}
+ }
 
 .productdetail {
   background-color: rgb(242, 242, 242); 
@@ -178,8 +174,7 @@ input[type="radio"]:checked + .custom-radio::before {
 .addCart {
    width: 270px;
    height: 40px;
-   /* border: none; */
-   /* background-color: rgb(252, 187, 11); */
+ 
    background-color: transparent;
    border-radius: 5px;
    
@@ -265,10 +260,6 @@ input[type="radio"]:checked + .custom-radio::before {
   align-items: center;
   justify-content: space-between;
 }
-
-/* /* .prices {
-  text-align: right; 
-}*/ 
 
 .mainprice {
   font-size: 1.2rem;
