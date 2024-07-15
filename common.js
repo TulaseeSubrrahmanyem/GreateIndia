@@ -26,24 +26,24 @@ function addToCart(button) {
             const selectedSize = button.dataset.size;
             const fashionSubcategories = ['mens', 'womens', 'children', 'fashion', 'footwear', 'menfootwear', 'womenfootwear', 'boysfootwear', 'girlsfootwear'];
             // Check if the product belongs to the fashion category
-            // if (fashionSubcategories.includes(productData.mainCategoryName.toLowerCase())) {
-            //     // Get the selected sizes
-            //    let selectedSizes = Array.from(document.querySelectorAll('input[name="size"]:checked')).map(el => el.value);
+            if (fashionSubcategories.includes(productData.mainCategoryName.toLowerCase())) {
+                // Get the selected sizes
+               let selectedSizes = Array.from(document.querySelectorAll('input[name="size"]:checked')).map(el => el.value);
               
-            //     // // Check if any size is selected
-            //     // if (selectedSizes.length === 0) {
+                // Check if any size is selected
+                if (selectedSizes.length === 0) {
                   
-            //     //     alert("Please select at least one size.");
-            //     //     return;
-            //     // }
+                    alert("Please select at least one size.");
+                    return;
+                }
 
-            //     // Add the selected sizes to the product data
-            //     //productData.selectedSizes = selectedSizes;
+                // Add the selected sizes to the product data
+                //productData.selectedSizes = selectedSizes;
                
-            //      productData.selectedSizes = selectedSizes || selectedSize;
-            //     // Add selected sizes to the product data if any selected
+                 productData.selectedSizes = selectedSizes || selectedSize;
+                // Add selected sizes to the product data if any selected
                
-            // }
+            }
             const selectedSizes = Array.from(document.querySelectorAll('input[name="size"]:checked')).map(el => el.value);
 
             // If no size is selected from user input, use default selected size

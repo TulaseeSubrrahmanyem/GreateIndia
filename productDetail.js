@@ -43,14 +43,14 @@ document.addEventListener("DOMContentLoaded", function() {
                     ${selectedItem.size && selectedItem.size.length > 0 ? `<p>Select Sizes:</p>` : ''}
                     ${selectedItem.size ? selectedItem.size.map((size, index) => `
                         <label>
-                            <input type="radio" name="size" value="${size}" ${selectedSizeInCart === size || (!isInCart && index === 0) ? 'checked' : ''}>
+                            <input type="radio" name="size" value="${size}" ${selectedSizeInCart === size  ? 'checked' : ''}>
                             <span class="custom-radio" data-size="${size}">${size}</span>
                         </label>
                     `).join('') : ''}
                     ${selectedItem['size(UK)'] && selectedItem['size(UK)'].length > 0 ? `<p>Select Sizes(UK):</p>` : ''}
                     ${selectedItem['size(UK)'] ? selectedItem['size(UK)'].map((size, index) => `
                         <label class="checkUKSize">
-                            <input type="radio" name="size" value="${size}" ${selectedSizeInCart === size || (!isInCart && index === 0) ? 'checked' : ''}>
+                            <input type="radio" name="size" value="${size}" ${selectedSizeInCart === size ? 'checked' : ''}>
                             <span class="custom-radio" data-size="${size}">${size}</span>
                         </label>
                     `).join('') : ''}
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
         `;
 
-        // Set the innerHTML of the selectedItemContainer
+        // Set the innerHTML of the selectedItemContainer selectedSizeInCart === size || (!isInCart && index === 0) 
         selectedItemContainer.innerHTML = productDetailsHTML;
     } else {
         selectedItemContainer.innerHTML = "<p>No product details found.</p>";
