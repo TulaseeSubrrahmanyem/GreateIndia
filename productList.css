@@ -338,6 +338,7 @@ button {
     font-size: 16px;
     font-weight: 550;
     color: green;
+    margin-top: 8px;
 }
 .priceCartBtn{
     margin-top: 0px;
