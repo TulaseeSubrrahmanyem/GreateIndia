@@ -124,12 +124,15 @@ function createProductDiv(product, mainCategoryName, subcategorie) {
     // Check if product is in cart
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const isInCart = cart.some(item => item.id === product.id);
+
     let selectedSize = '';
-    if (product.size && product.size.length > 0) {
-        selectedSize = product.size[0]; // Default to first size if available
-    } else if (product['size(UK)'] && product['size(UK)'].length > 0) {
-        selectedSize = product['size(UK)'][0]; // Default to first UK size if available
-    }
+    // if (product.size && product.size.length > 0) {
+    //     selectedSize = product.size[0]; // Default to first size if available
+    //     console.log(selectedSize)
+    // } else if (product['size(UK)'] && product['size(UK)'].length > 0) {
+    //     selectedSize = product['size(UK)'][0]; // Default to first UK size if available
+    // }
+
     productDiv.innerHTML = `
     
     <div class='itemsDetails' >
