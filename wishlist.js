@@ -39,14 +39,14 @@ document.addEventListener("DOMContentLoaded", function() {
              <td class="priceRow" >
                  <div class="priceClass">
                    <div class="dummyprices">₹${product.dummyprice}</div>
-                 <div class="mainprice"> ₹${product.mainprice}</div> 
+                   <div class="mainprice"> ₹${product.mainprice}</div> 
                  </div>
                  
              </td>
              <td class="brandClass">
                   <div> ${product.brand || 'Not specified'}</div>
              </td>
-       
+            
              <td class="addButtonClass">
                  <div class="wishListBtns">
                      <div class='date'>Added on:${dateString}</div>
@@ -57,15 +57,36 @@ document.addEventListener("DOMContentLoaded", function() {
              </td>
              <td class="removeBtnClass">
               
-                      <button class="remove-btn" data-product='${productDataString}'><i class="fas fa-trash-alt dleteIcon"></i></button>              
+                    <button class="remove-btn" data-product='${productDataString}'  onclick="deletewhislistItem(this)"><i class="fas fa-trash-alt dleteIcon"></i></button>              
              </td>
+             <td class="specialAddDel">
+                <div class="wishListBtns">
+                     <div class='date'>Added on:${dateString}</div>
+                     <div class="subwishListBtns">
+                         
+                           <button type='button' class='addCart' data-product='${productDataString}' data-size="${selectedSize}" onclick="addToCart(this)">
+                            ${isInCart ? 'Go to Cart' : 'Add to Cart'}
+                           </button>
+                        
+                          <button class="remove-btn" data-product='${productDataString}' onclick="deletewhislistItem(this)"><i class="fas fa-trash-alt dleteIcon"></i></button>              
+                        
+                     </div>
+                     
+                 </div>
+             </td>
+            
          `;
          
          // Attach event listener to the "Remove from Wishlist" button
-         const removeButton = wishlistItemRow.querySelector('.remove-btn');
-         removeButton.addEventListener('click', function() {
-             removeFromWishlist(removeButton);
-         });
+        //  const removeButton = wishlistItemRow.querySelector('.remove-btn');
+        //  removeButton.addEventListener('click', function() {
+        //      console.log("item called")
+        //      removeFromWishlist(removeButton);
+        //  });
+         window.deletewhislistItem=function(value){
+            removeFromWishlist(value);
+         }
+
  
          return wishlistItemRow;
      }
@@ -118,7 +139,94 @@ document.addEventListener("DOMContentLoaded", function() {
         renderWishlist();
     };
 
-   
+    // Function to add item to cart
+    // window.addToCart = function(button) {
+    //     try {
+    //         button.disabled = true;
+    
+    //         if (button && button.dataset) {
+    //             const productData = JSON.parse(button.dataset.product);
+    //             let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    //             console.log("Product Data:", productData.subcategorie);
+               
+                
+    //             // Check if productData is valid and has mainCategoryName
+    //             if (!productData || !productData.mainCategoryName ) {
+    //                 console.error("Product data or mainCategoryName sub category is missing.");
+    //                 return;
+    //             }
+    
+    //             const selectedSize = button.dataset.size;
+    //             const fashionSubcategories = ['mens', 'womens', 'children', 'fashion', 'footwear', 'menfootwear', 'womenfootwear', 'boysfootwear', 'girlsfootwear'];
+    //             // Check if the product belongs to the fashion category
+    //             // if (fashionSubcategories.includes(productData.mainCategoryName.toLowerCase())) {
+    //             //     // Get the selected sizes
+    //             //    let selectedSizes = Array.from(document.querySelectorAll('input[name="size"]:checked')).map(el => el.value);
+                  
+    //             //     // // Check if any size is selected
+    //             //     // if (selectedSizes.length === 0) {
+                      
+    //             //     //     alert("Please select at least one size.");
+    //             //     //     return;
+    //             //     // }
+    
+    //             //     // Add the selected sizes to the product data
+    //             //     //productData.selectedSizes = selectedSizes;
+                   
+    //             //      productData.selectedSizes = selectedSizes || selectedSize;
+    //             //     // Add selected sizes to the product data if any selected
+                   
+    //             // }
+    //             const selectedSizes = Array.from(document.querySelectorAll('input[name="size"]:checked')).map(el => el.value);
+    
+    //             // If no size is selected from user input, use default selected size
+    //             productData.selectedSizes = selectedSizes.length > 0 ? selectedSizes : [selectedSize];
+    //             // Set the category name in the product data
+    //             productData.subcategoryName = productData.subcategorie;
+    //             console.log(productData)
+    //             // Ensure ID is compared as a string
+    //             const productId = String(productData.id);
+    
+    //             // Check if the product with the same ID is already in the cart
+    //             const isInCart = cartItems.some(item => String(item.id) === productId);
+    
+    //             if (isInCart) {
+    //                 // alert("Product is already in the cart.");
+    //                 console.log("Product with this ID is already in the cart:", productData);
+    
+    //                 // Change button text and add event listener to go to cart
+    //                 button.textContent = 'Go to Cart';
+    //                 button.removeEventListener('click', addToCart); // Remove existing event listener
+    //                 button.addEventListener('click', () => window.location.href = 'cart.html'); // Add new event listener
+    //                 return;
+    //             } else {
+    //                 if (cartItems.length >= 10) {
+    //                     alert("You cannot add more than 10 items to the cart.");
+    //                     console.log("Cart limit of 10 items reached.");
+    //                     return;
+    //                 }
+    //                 cartItems.push(productData);
+    //                 localStorage.setItem('cart', JSON.stringify(cartItems));
+                   
+    //                 console.log("Product added to cart:", productData);
+    //                 // alert("Product added to cart.");
+    //             }
+    
+    //             // Change button text and add event listener to go to cart
+    //             button.textContent = 'Go to Cart';
+    //             button.removeEventListener('click', addToCart); // Remove existing event listener
+    //             button.addEventListener('click', () => window.location.href = 'cart.html'); // Add new event listener
+    //         } else {
+    //             console.error("Button is undefined or does not have dataset attribute:", button);
+    //         }
+    //     } catch (error) {
+    //         console.error("Error adding product to cart:", error);
+    //     } finally {
+    //         // Re-enable the button after processing
+    //         button.disabled = false;
+    //     }
+    // };
+
     // Initial render of wishlist
     renderWishlist();
 });
