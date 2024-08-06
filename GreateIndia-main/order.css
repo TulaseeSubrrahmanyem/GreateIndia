@@ -1,0 +1,231 @@
+/* General order container styling */
+/* .orders-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  
+} */
+.fiterContainer{
+    margin-right: 40px;
+   
+}
+.btnAndFilterContainer{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+#orderFilter{
+    height:30px;
+    align-items:center;
+    padding-left:15px;
+}
+.subOrder{
+    margin-bottom:5px;
+}
+
+
+/* Individual order styling */
+.order {
+    background: white;
+    min-height: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 70px;
+    margin: 30px;
+    margin-bottom: 20px;
+}
+
+#orderDetails h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+
+/* Individual item styling */
+.order-item {
+    display: flex;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 15px;
+    /* height: 100%; */
+}
+
+.item-details {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    /* gap: 15px; */
+}
+.item-details p{
+    margin: 10px;
+    margin-left: 140px;
+}
+.item-image img {
+    width: 200px;
+    height:200px;
+    border-radius: 8px;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+}
+.viewOrderBtn{
+    background-color: rgb(13, 73, 151);
+    height: 55px;
+    color: #fff;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    float: inline-end;
+    margin-bottom: 15px;
+}
+
+
+.item-name {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.item-quantity, .item-price {
+    color: #555;
+}
+.deleteItemBtn{
+    color: #fff;
+    background-color: red;
+    border: none;
+    width: 140px;
+    font-size: 18px;
+    font-weight: 550;
+    height: 40px;
+    border-radius: 5px;
+}
+#footer {
+    width: 100%;
+    background-color: #000;
+    color: white;
+    padding: 20px;
+    bottom: 0;
+    left: 0;
+    text-align: left;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-height: 100%;
+   
+}
+.noData{
+    text-align: center;
+    font-size: 28px;
+    font-weight: 550;
+    margin-top: 150px;
+}
+/* CSS classes for different order statuses */
+.status-confirmed {
+    color: green;
+}
+
+.status-cancelled {
+    color: red;
+}
+
+.status-refunded {
+    color: blue;
+}
+
+/* Media Query for Mobile View */
+@media (max-width: 768px) {
+    .btnAndFilterContainer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .fiterContainer{
+        margin-right: 20px;
+       width: 50%;
+    }
+    
+    #orderFilter{
+        height:30px;
+        align-items:center;
+        padding-left:15px;
+        width: 50%;
+    }
+    #orderFilter, .subOrder {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .order {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .order-item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item-details p {
+        margin: 10px 0;
+        margin-left: 0;
+    }
+
+    .item-image img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .viewOrderBtn{
+        background-color: rgb(13, 73, 151);
+        height: 55px;
+        color: #fff;
+        padding: 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        float:none;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    #orderDetails h3 {
+        font-size: 24px;
+    }
+
+    .item-name {
+        font-size: 18px;
+    }
+
+    .item-quantity, .item-price {
+        font-size: 16px;
+    }
+    #orderFilter{
+        height:30px;
+        align-items:center;
+        padding-left:15px;
+        width: 100%;
+    }
+    
+/* .address{
+    word-break: break-all;
+    width: 70%;
+   
+} */
+ 
+}

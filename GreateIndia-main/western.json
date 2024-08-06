@@ -1,0 +1,174 @@
+{
+    "category":"westernwear",
+    "items":[
+        {
+            "id":"61",
+            "name":" Globus Women One Shoulder Sequinned Bodycon Mini Party Dress",
+            "brand":" Globus",
+            "image":"https://m.media-amazon.com/images/I/81s5lal-NVL._SX679_.jpg",
+            "dummyprice":1200.00,
+            "mainprice" :960.00,
+            "discount":"20% off",
+            "rating":"5",
+            "ratingstars":"★★★★★",
+            "size":["s","m","l","xl","xxl"],
+             "description":"The dress is made from a soft, breathable cotton fabric in a soft pastel shade."
+        },
+        {
+            "id":"62",
+            "name":"QUEEN ELLIE Women's Western High Low Knee Long One Piece Dress",
+            "brand":"  QUEEN ELLIE",
+            "image":"https://m.media-amazon.com/images/I/51wJ99qAO4L._SY741_.jpg",
+            "dummyprice":999.70,
+            "mainprice" :749.77,
+            "discount":"25% off",
+            "rating":"4",
+            "ratingstars":"★★★★",
+            "size":["s","m","l","xl","xxl"],
+             "description":"The dress is made from a soft, breathable cotton fabric in a soft pastel shade."
+        
+        },
+        {
+            "id":"63",
+            "name":"Miss Chase Women's Sleeveless Cotton Round Neck Mini Bodycon Dress",
+            "brand":" Miss Chase ",
+            "image":"https://m.media-amazon.com/images/I/51rfMnypn9L._SY741_.jpg",
+            "dummyprice":800.70,
+            "mainprice" :720.56,
+            "discount":"10% off",
+            "rating":"3",
+            "ratingstars":"★★★",
+            "size":["s","m","l","xl","xxl"],
+             "description":"The dress is made from a soft, breathable cotton fabric in a soft pastel shade."
+        },
+        {
+            "id":"64",
+            "name":" Lymio Dresses for Women || Western Dresses for Women ",
+            "brand":"Lymio",
+            "image":"https://m.media-amazon.com/images/I/71Hy7lDZiaL._SY741_.jpg",
+            "dummyprice":600.00,
+            "mainprice" :480.00,
+            "discount":"20% off",
+            "rating":"4",
+            "ratingstars":"★★★★",
+            "size":["s","m","l","xl","xxl"],
+             "description":"The dress is made from a soft, breathable cotton fabric in a soft pastel shade."
+        
+        },
+        {
+            "id":"65",
+            "name":" EYEBOGLER Women Casual Dress",
+            "brand":" EYEBOGLER",
+            "image":"https://m.media-amazon.com/images/I/51+943cV3rL._SX569_.jpg",
+            "dummyprice":700.00,
+            "mainprice" :630.00,
+            "discount":"10% off",
+            "rating":"3",
+            "ratingstars":"★★★",
+            "size":["s","m","l","xl","xxl"],
+             "description":"The dress is made from a soft, breathable cotton fabric in a soft pastel shade."
+        
+        
+        },
+        {
+            "id":"66",
+            "name":"FUNAHME Women's Short Sleeves Western Bodycon Mini Dress for Women.",
+            "brand":" FUNAHME",
+            "image":"https://m.media-amazon.com/images/I/31SbKlIw1TL.jpg",
+            "dummyprice":900.00,
+            "mainprice" :630.00,
+            "discount":"30% off",
+            "rating":"4",
+            "ratingstars":"★★★★",
+            "size":["s","m","l","xl","xxl"],
+             "description":"The dress is made from a soft, breathable cotton fabric in a soft pastel shade."
+        
+        
+        },
+        {
+            "id":"67",
+            "name":"SIRIL Women's Lycra Black One Piece Dresses",
+            "brand":" SIRIL",
+            "image":"https://m.media-amazon.com/images/I/41PZiCHm60L._SY741_.jpg",
+            "dummyprice":1100.00,
+            "mainprice" :825.00,
+            "discount":"25% off",
+            "rating":"3",
+            "ratingstars":"★★★",
+            "size":["s","m","l","xl","xxl"],
+             "description":"The dress is made from a soft, breathable cotton fabric in a soft pastel shade."
+        
+        },
+        {
+            "id":"68",
+            "name":"Leriya Fashion Oversized Corp Shirt for Women ",
+            "brand":"Leriya Fashion",
+            "image":"https://m.media-amazon.com/images/I/71ZqIMS9USL._SY879_.jpg",
+            "dummyprice":999.00,
+            "mainprice" :799.20,
+            "discount":"20% off",
+            "rating":"4",
+            "ratingstars":"★★★★",
+            "size":["s","m","l","xl","xxl"],
+             "description":"The dress is made from a soft, breathable cotton fabric in a soft pastel shade."
+        
+        
+        },
+        {
+            "id":"69",
+            "name":"DHRUVI TRENDZ Women Standard Length Dress",
+            "brand":" DHRUVI TRENDZ",
+            "image":"https://m.media-amazon.com/images/I/51XsMMDXhWL._SY879_.jpg",
+            "dummyprice":500.00,
+            "mainprice" :375.00,
+            "discount":"25% off",
+            "rating":"3",
+            "ratingstars":"★★★",
+            "size":["s","m","l","xl","xxl"],
+             "description":"The dress is made from a soft, breathable cotton fabric in a soft pastel shade."
+        
+        },
+        {
+            "id":"70",
+            "name":"Aahwan Women's Midi Dress",
+            "brand":"Aahwan ",
+            "image":"https://m.media-amazon.com/images/I/51F8qaDJTbL._SY879_.jpg",
+            "dummyprice":700.00,
+            "mainprice" :560.00,
+            "discount":"20% off",
+            "rating":"3",
+            "ratingstars":"★★★",
+            "sizes":["s","m","l","xl","xxl"],
+             "description":"The dress is made from a soft, breathable cotton fabric in a soft pastel shade."
+        
+        },
+        {    "id":"81",
+            "name":" AONE Clothing Women's Crepe Dress for Ladies & Girls",
+            "brand":"Generic",
+            "image":"https://m.media-amazon.com/images/I/41DJuAf0KaL.jpg",
+            "dummyprice":999.00,
+            "mainprice" :849.15,
+            "discount":"15% off",
+            "rating":"4",
+            "ratingstars":"★★★★",
+            "size":["s","m","l","xl","xxl"],
+             "description":"The dress is made from a soft, breathable cotton fabric in a soft pastel shade."
+        
+        },
+        {
+            "id":"82",
+            "name":"Leriya Fashion Women's Corduroy Button Down Pocket Blouses Tops",
+            "brand":" Leriya Fashion",
+            "image":"https://m.media-amazon.com/images/I/71LMGs6dccL._SY879_.jpg",
+            "dummyprice":950.00,
+            "mainprice" :855.00,
+            "discount":"10% off",
+            "rating":"4",
+            "ratingstars":"★★★★",
+            "size":["s","m","l","xl","xxl"],
+             "description":"The dress is made from a soft, breathable cotton fabric in a soft pastel shade."
+        
+        } 
+        
+    ]
+}, 
