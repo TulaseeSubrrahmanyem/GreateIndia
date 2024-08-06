@@ -184,6 +184,7 @@ input[type="radio"]:checked + .custom-radio::before {
    font-size: 16px;
    padding: 10px;
    margin-top: 0px;
+   margin-left: 10px;
    cursor: pointer;
 }
 
@@ -195,16 +196,16 @@ input[type="radio"]:checked + .custom-radio::before {
 
 .buyButton {
   width: 270px;
-  height: 40px;
+  height: 45px;
   border: none;
   background-color: rgb(7, 75, 7);
-  
+  border-radius: 5px;
   color: #fff;
   font-size: 16px;
-  padding-bottom: 5px;
+  padding: 10px;
   margin-top: 5px;
   cursor: pointer;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 .favoriteBtn .far,
@@ -282,7 +283,7 @@ input[type="radio"]:checked + .custom-radio::before {
 }
 
 .btnContainer{
-  
+   margin: 10px;
   justify-content: space-around;
 }
 
