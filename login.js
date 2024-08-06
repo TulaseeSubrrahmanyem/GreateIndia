@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
     localStorage.setItem("userDetails", JSON.stringify(registeredUsers));
 
     // Display success message (popup)
-    showAlert("Registration successful!");
+    // showAlert("Registration successful!");
 
     // Clear input fields
     document.getElementById('registerName').value = "";
@@ -250,27 +250,27 @@ function sendToGoogleSheets(user) {
 }
 
 
-// Function to show custom alert message at the middle of the page
-// Function to show custom alert message at the middle of the page
-function showAlert(message, alertClass = '') {
-  // Create alert box
-  var alertBox = document.createElement('div');
-  alertBox.classList.add('custom-alert');
-  if (alertClass) {
-    alertBox.classList.add(alertClass); // Add custom CSS class for styling
-  }
-  alertBox.innerText = message;
 
-  // Append to body
-  document.body.appendChild(alertBox);
+// Function to show custom alert message at the middle of the page
+// function showAlert(message, alertClass = '') {
+//   // Create alert box
+//   var alertBox = document.createElement('div');
+//   alertBox.classList.add('custom-alert');
+//   if (alertClass) {
+//     alertBox.classList.add(alertClass); // Add custom CSS class for styling
+//   }
+//   alertBox.innerText = message;
 
-  // Remove after a delay
-  setTimeout(function() {
-    alertBox.remove();
-  }, 3000); // Adjust delay as needed
+//   // Append to body
+//   document.body.appendChild(alertBox);
+
+//   // Remove after a delay
+//   setTimeout(function() {
+//     alertBox.remove();
+//   }, 3000); // Adjust delay as needed
 
    
 
 
-}
+// }
 
