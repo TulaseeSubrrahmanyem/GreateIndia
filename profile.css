@@ -24,7 +24,7 @@ body, html {
 .profile-container {
   display: flex;
   border: 2px solid #ccc;
-  background-color: #e1e1eb;
+  background-color: #f7f7f7;
   width: 100%;
   padding: 10px;
   border-radius: 10px;
@@ -79,7 +79,7 @@ body, html {
 
 .profileTasksContainer {
   border: 2px solid #ccc;
-  background-color: #e1e1eb;
+  background-color: #f7f7f7;
   padding: 30px;
   display: flex;
   flex-direction: row;
