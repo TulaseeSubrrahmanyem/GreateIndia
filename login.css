@@ -91,7 +91,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 888px;
-  height:450px;
+  height:100%;
   border-radius: 5px;
 
   align-items: center;
@@ -509,7 +509,8 @@ section .girl {
   text-align: center;
   border: none;
   background-color: #1b6de9;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
   color: #ffffff;
   box-shadow: 0 8px 24px 0 rgba(255, 235, 167, .2);
 }
@@ -535,7 +536,8 @@ section .girl {
   cursor: pointer;
   font-weight: 600;
   text-transform: uppercase;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   transition: color 0.3s ease;
 }
  

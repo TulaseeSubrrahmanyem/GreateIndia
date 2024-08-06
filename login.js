@@ -267,9 +267,7 @@ function sendToGoogleSheets(user) {
 //   // Remove after a delay
 //   setTimeout(function() {
 //     alertBox.remove();
-//   }, 3000); // Adjust delay as needed
-
-   
+//   }, 3000); // Adjust delay as needed  
 
 
 // }
